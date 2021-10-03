@@ -82,8 +82,12 @@ export const SAFE_METHODS = [
   "tx_sendSignedTransaction",
   //'eth_sendTransaction',
   "account_sendRawTransaction",
+  "tol_sendTransaction",
+  "tol_sendTolarTransaction",
   //'eth_sign',
   "personal_sign",
+  "taq_sendTransaction",
+  "tol_sendTaquinTransaction",
   //'personal_ecRecover',
   //'eth_signTypedData',
   //'eth_signTypedData_v1',
@@ -115,4 +119,5 @@ export const SAFE_METHODS = [
   "tol_getBlockchainInfo",
   "tol_getTransactionList",
   "tol_getLatestBalance",
+  "account_listAddresses",
 ];

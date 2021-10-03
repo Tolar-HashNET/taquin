@@ -18,7 +18,7 @@ export default function createTaquinMiddleware({
   processDecryptMessage,
   processEncryptionPublicKey,
   getPendingNonce,
-  getPendingTransactionByHash,
+  signTolarTransaction,
 }) {
   const taquinMiddleware = mergeMiddleware([
     createScaffoldMiddleware({
@@ -38,7 +38,7 @@ export default function createTaquinMiddleware({
       processEncryptionPublicKey,
     }),
     createPendingNonceMiddleware({ getPendingNonce }),
-    createPendingTxMiddleware({ getPendingTransactionByHash }),
+    createPendingTxMiddleware({ signTolarTransaction }),
   ]);
   return taquinMiddleware;
 }

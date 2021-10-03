@@ -19,13 +19,13 @@ export default function setupWeb3(log) {
   let lastSeenNetwork;
   let hasBeenWarned = false;
 
-  const web3 = new Web3(window.ethereum);
+  const web3 = new Web3(window.tolar);
   web3.setProvider = function () {
     log.debug("Taquin - overrode web3.setProvider");
   };
   log.debug("Taquin - injected web3");
 
-  Object.defineProperty(window.ethereum, "_web3Ref", {
+  Object.defineProperty(window.tolar, "_web3Ref", {
     enumerable: false,
     writable: true,
     configurable: true,
@@ -47,7 +47,7 @@ export default function setupWeb3(log) {
 
       // if (shouldLogUsage) {
       //   const name = stringifyKey(key)
-      //   window.ethereum.request({
+      //   window.tolar.request({
       //     method: 'taquin_logInjectedWeb3Usage',
       //     params: [{ action: 'window.web3 get', name }],
       //   })
@@ -59,7 +59,7 @@ export default function setupWeb3(log) {
     set: (_web3, key, value) => {
       const name = stringifyKey(key);
       // if (shouldLogUsage) {
-      //   window.ethereum.request({
+      //   window.tolar.request({
       //     method: 'taquin_logInjectedWeb3Usage',
       //     params: [{ action: 'window.web3 set', name }],
       //   })
@@ -77,10 +77,10 @@ export default function setupWeb3(log) {
     value: web3Proxy,
   });
 
-  window.ethereum._publicConfigStore.subscribe((state) => {
+  window.tolar._publicConfigStore.subscribe((state) => {
     // if the auto refresh on network change is false do not
     // do anything
-    if (!window.ethereum.autoRefreshOnNetworkChange) {
+    if (!window.tolar.autoRefreshOnNetworkChange) {
       return;
     }
 

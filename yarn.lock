@@ -26332,6 +26332,21 @@ tape@^4.9.1:
     string.prototype.trim "~1.1.2"
     through "~2.3.8"
 
+taquin-provider@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/taquin-provider/-/taquin-provider-1.0.0.tgz#f8dfb6a48f859a90fbab04f57280cda158b45215"
+  integrity sha512-ny8Jj4Pz5P0h0tae3opqg+M01FET3+VyiCP+4Kmqepn2h2ZzL8uozzcQ3iiimkc/D8jkRcmnipce2Ow8cR/6Yw==
+  dependencies:
+    eth-json-rpc-errors "^2.0.2"
+    fast-deep-equal "^2.0.1"
+    json-rpc-engine "^5.1.5"
+    json-rpc-middleware-stream "^2.1.1"
+    loglevel "^1.6.1"
+    obj-multiplex "^1.0.0"
+    obs-store "^4.0.3"
+    pump "^3.0.0"
+    safe-event-emitter "^1.0.1"
+
 tar-stream@^1.5.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-1.6.2.tgz#8ea55dab37972253d9a9af90fdcd559ae435c555"

@@ -257,7 +257,9 @@ export default class TaquinController extends EventEmitter {
       blockTracker: this.blockTracker,
       web3: this.web3,
     });
-    this.txController.on("newUnapprovedTx", () => opts.showUnapprovedTx());
+    this.txController.on("newUnapprovedTx", () => {
+      return opts.showUnapprovedTx();
+    });
 
     this.txController.on(`tx:status-update`, async (txId, status) => {
       if (status === "confirmed" || status === "failed") {
@@ -378,8 +380,24 @@ export default class TaquinController extends EventEmitter {
       processDecryptMessage: this.newRequestDecryptMessage.bind(this),
       processEncryptionPublicKey: this.newRequestEncryptionPublicKey.bind(this),
       getPendingNonce: this.getPendingNonce.bind(this),
-      getPendingTransactionByHash: (hash) =>
-        this.txController.getFilteredTxList({ hash, status: "submitted" })[0],
+      signTolarTransaction: async (txData) => {
+        const selectedAddress = this.preferencesController.getSelectedAddress();
+        if (
+          txData &&
+          txData.sender_address &&
+          txData.sender_address !== selectedAddress
+        ) {
+          throw new Error(
+            "You are trying to send transaction from account that is not selected. Please select other account or import new one."
+          );
+        }
+
+        return await this.txController.signEthTx(txData, txData.sender_address);
+      },
+
+      // getPendingTransactionByHash: (hash) =>
+      //   this.txController.getFilteredTxList({ hash, status: "submitted" })[0],
+      txData: (...data) => {},
     };
     const providerProxy =
       this.networkController.initializeProvider(providerOpts);
@@ -587,10 +605,8 @@ export default class TaquinController extends EventEmitter {
       // txController
       signTx: nodeify(txController.signEthTx, txController),
       cancelTransaction: nodeify(txController.cancelTransaction, txController),
-      clearUnapprovedTxs: nodeify(
-        txController.txStateManager.clearUnapprovedTxs(),
-        txController
-      ),
+      clearUnapprovedTxs: () =>
+        nodeify(txController.txStateManager.clearUnapprovedTxs(), txController),
       updateTransaction: nodeify(txController.updateTransaction, txController),
       updateAndApproveTransaction: nodeify(
         txController.updateAndApproveTransaction,

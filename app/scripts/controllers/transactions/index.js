@@ -77,7 +77,10 @@ export default class TransactionController extends EventEmitter {
         this.txStateManager.clearUnapprovedTxs();
         await this.addUnapprovedTransaction(result);
         return result;
-      } catch (e) {}
+      } catch (e) {
+        this.txStateManager.clearUnapprovedTxs();
+        throw e;
+      }
     };
     this.inProcessOfSigning = new Set();
 
@@ -123,7 +126,9 @@ export default class TransactionController extends EventEmitter {
     this._setupListeners();
     // memstore is computed from a few different stores
     this._updateMemstore();
-    this.txStateManager.store.subscribe(() => this._updateMemstore());
+    this.txStateManager.store.subscribe(() => {
+      this._updateMemstore();
+    });
     this.networkStore.subscribe(() => {
       this._onBootCleanUp();
       this._updateMemstore();
