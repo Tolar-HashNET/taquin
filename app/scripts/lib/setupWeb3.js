@@ -29,14 +29,13 @@ export default function setupWeb3(log) {
     enumerable: false,
     writable: true,
     configurable: true,
-    value: web3.eth,
+    value: web3.tolar,
   });
 
   const web3Proxy = new Proxy(web3, {
-    get: (_web3, key) => {
+    get: (_web3t, key) => {
       // get the time of use
       lastTimeUsed = Date.now();
-
       // show warning once on web3 access
       if (!hasBeenWarned) {
         console.warn(
@@ -54,9 +53,9 @@ export default function setupWeb3(log) {
       // }
 
       // return value normally
-      return _web3[key];
+      return _web3t[key];
     },
-    set: (_web3, key, value) => {
+    set: (_web3t, key, value) => {
       const name = stringifyKey(key);
       // if (shouldLogUsage) {
       //   window.tolar.request({
@@ -66,11 +65,11 @@ export default function setupWeb3(log) {
       // }
 
       // set value normally
-      _web3[key] = value;
+      _web3t[key] = value;
     },
   });
 
-  Object.defineProperty(global, "web3", {
+  Object.defineProperty(global, "web3t", {
     enumerable: false,
     writable: true,
     configurable: true,

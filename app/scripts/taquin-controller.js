@@ -1688,7 +1688,7 @@ export default class TaquinController extends EventEmitter {
     const mux = setupMultiplex(connectionStream);
 
     // messages between inpage and background
-    this.setupProviderConnection(mux.createStream("provider"), sender);
+    this.setupProviderConnection(mux.createStream("taquin-provider"), sender);
     this.setupPublicConfig(mux.createStream("publicConfig"));
   }
 
@@ -1706,7 +1706,11 @@ export default class TaquinController extends EventEmitter {
     const mux = setupMultiplex(connectionStream);
     // connect features
     this.setupControllerConnection(mux.createStream("controller"));
-    this.setupProviderConnection(mux.createStream("provider"), sender, true);
+    this.setupProviderConnection(
+      mux.createStream("taquin-provider"),
+      sender,
+      true
+    );
   }
 
   /**

@@ -60,7 +60,7 @@ initProvider({
 // TODO:deprecate:2020
 // Setup web3
 
-if (typeof window.web3 !== "undefined") {
+if (typeof window.web3t !== "undefined") {
   throw new Error(`Taquin detected another web3.
      Taquin will not work reliably with another web3 extension.
      This usually happens if you have two Taquins installed,
