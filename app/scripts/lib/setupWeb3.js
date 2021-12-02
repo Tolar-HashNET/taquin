@@ -120,7 +120,7 @@ export default function setupWeb3(log) {
 
 // reload the page
 function triggerReset() {
-  global.location.reload();
+  //global.location.reload();
 }
 
 /**
