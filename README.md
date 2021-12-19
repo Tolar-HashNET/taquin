@@ -31,3 +31,17 @@ window.tolar.request({
 ### Other methods
 
 `window.tolar.request()` can be used for invoking any gRPC method that is on safe list.
+
+### Development
+
+Node version 10.16.0
+
+Run the project
+`yarn start`
+
+Run in development mode with react and redux dev tools
+`yarn start:dev`
+
+Build the project in dist folder
+
+`yarn dist`
