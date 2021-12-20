@@ -26332,7 +26332,7 @@ tape@^4.9.1:
     string.prototype.trim "~1.1.2"
     through "~2.3.8"
 
-taquin-provider@1.0.2:
+taquin-provider@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/taquin-provider/-/taquin-provider-1.0.2.tgz#899f7cc7de284015baaa7ba3ef9b1476bedb694a"
   integrity sha512-r6wGYL55J1E5Oa0dzOBfflEMtw5ufYcQVtpBTQ+6V+3paL7wGsQ+0pqKgdwAuSmA3OqZCAz2tggDslmG5tbtiQ==
