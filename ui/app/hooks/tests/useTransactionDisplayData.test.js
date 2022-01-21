@@ -18,41 +18,41 @@ import messages from "../../../../app/_locales/en/messages.json";
 
 const expectedResults = [
   {
-    title: "Send ETH",
+    title: "Send TOL",
     category: "send",
     subtitle: "To: 0xffe5...1a97",
     subtitleContainsOrigin: false,
     date: "May 12",
-    primaryCurrency: "-1 ETH",
+    primaryCurrency: "-1 TOL",
     senderAddress: "0x9eca64466f257793eaa52fcfff5066894b76a149",
     recipientAddress: "0xffe5bc4e8f1f969934d773fa67da095d2e491a97",
-    secondaryCurrency: "-1 ETH",
+    secondaryCurrency: "-1 TOL",
     isPending: false,
     status: "confirmed",
   },
   {
-    title: "Send ETH",
+    title: "Send TOL",
     category: "send",
     subtitle: "To: 0x0ccc...8848",
     subtitleContainsOrigin: false,
     date: "May 12",
-    primaryCurrency: "-2 ETH",
+    primaryCurrency: "-2 TOL",
     senderAddress: "0x9eca64466f257793eaa52fcfff5066894b76a149",
     recipientAddress: "0x0ccc8aeeaf5ce790f3b448325981a143fdef8848",
-    secondaryCurrency: "-2 ETH",
+    secondaryCurrency: "-2 TOL",
     isPending: false,
     status: "confirmed",
   },
   {
-    title: "Send ETH",
+    title: "Send TOL",
     category: "send",
     subtitle: "To: 0xffe5...1a97",
     subtitleContainsOrigin: false,
     date: "May 12",
-    primaryCurrency: "-2 ETH",
+    primaryCurrency: "-2 TOL",
     senderAddress: "0x9eca64466f257793eaa52fcfff5066894b76a149",
     recipientAddress: "0xffe5bc4e8f1f969934d773fa67da095d2e491a97",
-    secondaryCurrency: "-2 ETH",
+    secondaryCurrency: "-2 TOL",
     isPending: false,
     status: "confirmed",
   },
@@ -62,10 +62,10 @@ const expectedResults = [
     subtitle: "From: 0x31b9...4523",
     subtitleContainsOrigin: false,
     date: "May 12",
-    primaryCurrency: "18.75 ETH",
+    primaryCurrency: "18.75 TOL",
     senderAddress: "0x31b98d14007bdee637298086988a0bbd31184523",
     recipientAddress: "0x9eca64466f257793eaa52fcfff5066894b76a149",
-    secondaryCurrency: "18.75 ETH",
+    secondaryCurrency: "18.75 TOL",
     isPending: false,
     status: "confirmed",
   },
@@ -75,10 +75,10 @@ const expectedResults = [
     subtitle: "From: 0x9eca...a149",
     subtitleContainsOrigin: false,
     date: "May 8",
-    primaryCurrency: "0 ETH",
+    primaryCurrency: "0 TOL",
     senderAddress: "0x9eca64466f257793eaa52fcfff5066894b76a149",
     recipientAddress: "0x9eca64466f257793eaa52fcfff5066894b76a149",
-    secondaryCurrency: "0 ETH",
+    secondaryCurrency: "0 TOL",
     isPending: false,
     status: "confirmed",
   },
@@ -88,10 +88,10 @@ const expectedResults = [
     subtitle: "From: 0xee01...febb",
     subtitleContainsOrigin: false,
     date: "May 24",
-    primaryCurrency: "1 ETH",
+    primaryCurrency: "1 TOL",
     senderAddress: "0xee014609ef9e09776ac5fe00bdbfef57bcdefebb",
     recipientAddress: "0x9eca64466f257793eaa52fcfff5066894b76a149",
-    secondaryCurrency: "1 ETH",
+    secondaryCurrency: "1 TOL",
     isPending: false,
     status: "confirmed",
   },
@@ -123,9 +123,9 @@ describe("useTransactionDisplayData", function () {
       } else if (selector === getShouldShowFiat) {
         return false;
       } else if (selector === getNativeCurrency) {
-        return "ETH";
+        return "TOL";
       } else if (selector === getCurrentCurrency) {
-        return "ETH";
+        return "TOL";
       }
       return null;
     });

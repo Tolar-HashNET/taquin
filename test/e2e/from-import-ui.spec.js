@@ -184,7 +184,7 @@ describe('Using MetaMask with an existing account', function () {
     })
   })
 
-  describe('Send ETH from inside MetaMask', function () {
+  describe('Send TOL from inside MetaMask', function () {
     it('starts a send transaction', async function () {
       await driver.clickElement(By.xpath(`//button[contains(text(), 'Send')]`))
       await driver.delay(regularDelayMs)
@@ -223,7 +223,7 @@ describe('Using MetaMask with an existing account', function () {
 
       const txValues = await driver.findElements(By.css('.transaction-list-item__primary-currency'))
       assert.equal(txValues.length, 1)
-      assert.ok((/-1\s*ETH/u).test(await txValues[0].getText()))
+      assert.ok((/-1\s*TOL/u).test(await txValues[0].getText()))
     })
   })
 

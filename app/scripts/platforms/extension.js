@@ -201,7 +201,7 @@ export default class ExtensionPlatform {
     const netId = txMeta.taquinNetworkId;
     const isTolar = Boolean(networkIdToTypeMap[netId]);
     const prefix = networkIdToTypeMap[netId] || "explorer";
-    const hash = txMeta?.txParams?.body?.transaction_hash || txMeta?.hash || "";
+    const hash = txMeta?.txParams?.body?.transaction_hash || txMeta?.hash || ""; 
 
     const url = isTolar
       ? `https://${prefix}.tolar.io/transaction/${hash}`

@@ -52,8 +52,8 @@ export function createPendingTxMiddleware(args) {
     }
 
     req.method = "tol_getNonce";
-    await signTolarTransaction(...params);
+    let signing_result = await signTolarTransaction(...params);
 
-    res.result = txData;
+    res.result = {'txData': txData, 'txHash': signing_result.sig_data.hash};
   });
 }
