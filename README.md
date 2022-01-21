@@ -37,11 +37,20 @@ window.tolar.request({
 Node version 10.16.0
 
 Run the project
-`yarn start`
+```
+yarn install
+yarn add taquin-provider`
+yarn start
+```
 
 Run in development mode with react and redux dev tools
-`yarn start:dev`
+```
+yarn start:dev
+```
 
-Build the project in dist folder
-
-`yarn dist`
+Release build
+```
+yarn install
+yarn add taquin-provider
+yarn dist
+```
