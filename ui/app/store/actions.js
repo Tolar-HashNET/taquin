@@ -1548,7 +1548,7 @@ export function setPreviousProvider(type) {
 export function updateAndSetCustomRpc(
   newRpc,
   chainId,
-  ticker = "ETH",
+  ticker = "TOL",
   nickname,
   rpcPrefs
 ) {
@@ -1582,7 +1582,7 @@ export function editRpc(
   oldRpc,
   newRpc,
   chainId,
-  ticker = "ETH",
+  ticker = "TOL",
   nickname,
   rpcPrefs
 ) {
@@ -1617,7 +1617,7 @@ export function editRpc(
   };
 }
 
-export function setRpcTarget(newRpc, chainId, ticker = "ETH", nickname) {
+export function setRpcTarget(newRpc, chainId, ticker = "TOL", nickname) {
   return async (dispatch) => {
     log.debug(
       `background.setRpcTarget: ${newRpc} ${chainId} ${ticker} ${nickname}`

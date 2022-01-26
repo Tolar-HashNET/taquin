@@ -39,7 +39,7 @@ Node version 10.16.0
 Run the project
 ```
 yarn install
-yarn add taquin-provider`
+yarn add taquin-provider
 yarn start
 ```
 

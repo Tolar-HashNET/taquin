@@ -2117,7 +2117,7 @@ export default class TaquinController extends EventEmitter {
   async updateAndSetCustomRpc(
     rpcUrl,
     chainId,
-    ticker = "ETH",
+    ticker = "TOL",
     nickname,
     rpcPrefs
   ) {
@@ -2149,7 +2149,7 @@ export default class TaquinController extends EventEmitter {
   async setCustomRpc(
     rpcTarget,
     chainId,
-    ticker = "ETH",
+    ticker = "TOL",
     nickname = "",
     rpcPrefs = {}
   ) {

@@ -1281,7 +1281,7 @@ describe('MetaMask', function () {
       await driver.clickElement(By.css('.network-name'))
       await driver.delay(regularDelayMs)
 
-      await driver.clickElement(By.xpath(`//span[contains(text(), 'Main Ethereum Network')]`))
+      await driver.clickElement(By.xpath(`//span[contains(text(), 'Main Tolar Network')]`))
       await driver.delay(largeDelayMs * 2)
     })
 

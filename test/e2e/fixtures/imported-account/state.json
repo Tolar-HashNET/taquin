@@ -12,7 +12,7 @@
       "conversionDate": 1575697244.188,
       "conversionRate": 149.61,
       "currentCurrency": "usd",
-      "nativeCurrency": "ETH"
+      "nativeCurrency": "TOL"
     },
     "IncomingTransactionsController": {
       "incomingTransactions": {},
@@ -31,11 +31,11 @@
       "provider": {
         "nickname": "",
         "rpcTarget": "",
-        "ticker": "ETH",
+        "ticker": "TOL",
         "type": "localhost"
       },
       "settings": {
-        "ticker": "ETH"
+        "ticker": "TOL"
       }
     },
     "OnboardingController": {

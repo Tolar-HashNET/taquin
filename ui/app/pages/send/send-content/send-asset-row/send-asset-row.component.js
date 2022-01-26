@@ -47,7 +47,7 @@ export default class SendAssetRow extends Component {
             name: 'User clicks "Assets" dropdown',
           },
           customVariables: {
-            assetSelected: token ? "ERC20" : "ETH",
+            assetSelected: token ? "ERC20" : "TOL",
           },
         });
         this.props.setSendToken(token);
