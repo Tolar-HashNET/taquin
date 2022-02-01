@@ -103,6 +103,23 @@ export default class Network extends Component {
           </NetworkIndicator>
         );
 
+        case "staging-gcp":
+            return (
+              <NetworkIndicator
+                disabled={disabled}
+                hoverText={"Staging GCP" || t("staging-gcp")}
+                onClick={onClick}
+                providerName={providerName}
+              >
+                <NetworkDropdownIcon
+                  backgroundColor="#79d351"
+                  nonSelectBackgroundColor="#ff1100"
+                  loading={networkNumber === "loading"}
+                />
+                <div className="network-name">{"Staging GCP" || t("staging-gcp")}</div>
+              </NetworkIndicator>
+            );
+
       default:
         return (
           <NetworkIndicator

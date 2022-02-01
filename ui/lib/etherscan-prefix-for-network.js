@@ -12,6 +12,8 @@ export function getEtherscanNetworkPrefix(networkId) {
       return "gateway.dev.";
     case networkEnums.MAINNET_NETWORK_ID:
       return "testnet-gateway.dev.";
+    case networkEnums.STAGINGGCP_NETWORK_ID:
+      return "jsongw.stagenet.";
     // case networkEnums.KOVAN_NETWORK_ID:
     //   return 'kovan.'
     // case networkEnums.GOERLI_NETWORK_ID:

@@ -8,6 +8,7 @@ import fetchWithTimeout from "../lib/fetch-with-timeout";
 import {
   MAINNET,
   TESTNET,
+  STAGINGGCP,
   NETWORK_TYPE_TO_SUBDOMAIN_MAP,
 } from "./network/enums";
 const fetch = fetchWithTimeout({
@@ -53,6 +54,7 @@ export default class IncomingTransactionsController {
         // [GOERLI]: null,
         [MAINNET]: null,
         [TESTNET]: null,
+        [STAGINGGCP]: null,
       },
       ...opts.initState,
     };

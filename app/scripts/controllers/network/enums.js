@@ -5,6 +5,7 @@
 // export const GOERLI = 'goerli'
 export const MAINNET = "mainnet";
 export const TESTNET = "testnet";
+export const STAGINGGCP = "staging-gcp";
 export const LOCALHOST = "localhost";
 
 // export const MAINNET_NETWORK_ID = '1'
@@ -14,9 +15,11 @@ export const LOCALHOST = "localhost";
 // export const KOVAN_NETWORK_ID = '42'
 export const MAINNET_NETWORK_ID = "1";
 export const TESTNET_NETWORK_ID = "3";
+export const STAGINGGCP_NETWORK_ID = "4";
 
 export const MAINNET_SUBDOMAIN = "gateway.dev";
 export const TESTNET_SUBDOMAIN = "testnet-gateway.dev";
+export const STAGING_GCP_SUBDOMAIN = "jsongw.stagenet";
 
 // export const MAINNET_CHAIN_ID = '0x1'
 // export const ROPSTEN_CHAIN_ID = '0x3'
@@ -32,8 +35,9 @@ export const TESTNET_SUBDOMAIN = "testnet-gateway.dev";
 
 export const MAINNET_DISPLAY_NAME = "Main Tolar Network";
 export const TESTNET_DISPLAY_NAME = "Test Tolar Network";
+export const STAGING_GCP_DISPLAY_NAME = "Staging GCP Tolar Network";
 
-export const TOLAR_PROVIDER_TYPES = [MAINNET, TESTNET];
+export const TOLAR_PROVIDER_TYPES = [MAINNET, TESTNET, STAGINGGCP];
 
 // export const INFURA_PROVIDER_TYPES = [
 //   ROPSTEN,
@@ -54,11 +58,13 @@ export const TOLAR_PROVIDER_TYPES = [MAINNET, TESTNET];
 export const NETWORK_TYPE_TO_ID_MAP = {
   [MAINNET]: { networkId: MAINNET_NETWORK_ID },
   [TESTNET]: { networkId: TESTNET_NETWORK_ID },
+  [STAGINGGCP]: { networkId: STAGINGGCP_NETWORK_ID },
 };
 
 export const NETWORK_TYPE_TO_SUBDOMAIN_MAP = {
   [MAINNET]: { subdomain: MAINNET_SUBDOMAIN },
   [TESTNET]: { subdomain: TESTNET_SUBDOMAIN },
+  [STAGINGGCP]: { subdomain: STAGING_GCP_SUBDOMAIN },
 };
 
 // export const NETWORK_TO_NAME_MAP = {
@@ -84,4 +90,5 @@ export const NETWORK_TYPE_TO_SUBDOMAIN_MAP = {
 export const NETWORK_TO_NAME_MAP = {
   [MAINNET]: MAINNET_DISPLAY_NAME,
   [TESTNET]: TESTNET_DISPLAY_NAME,
+  [STAGINGGCP]: STAGING_GCP_DISPLAY_NAME,
 };

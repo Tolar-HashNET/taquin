@@ -4,11 +4,14 @@ import classnames from "classnames";
 import {
   MAINNET_NETWORK_ID,
   TESTNET_NETWORK_ID,
+  STAGINGGCP,
+  STAGINGGCP_NETWORK_ID,
 } from "../../../../../app/scripts/controllers/network/enums";
 
 const networkIdToTypeMap = {
   [MAINNET_NETWORK_ID]: "mainnet",
   [TESTNET_NETWORK_ID]: "testnet",
+  [STAGINGGCP_NETWORK_ID]: "staging-gcp",
 };
 
 export default class NetworkDisplay extends Component {

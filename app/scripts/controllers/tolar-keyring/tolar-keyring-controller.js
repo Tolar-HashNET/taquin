@@ -14,6 +14,12 @@ export class TolarKeyringController extends KeyringController {
     this.web3 = opts.web3;
   }
 
+  updateNetwork(netConfig) {
+    for (var i = 0; i < this.keyrings.length; i++) {
+      this.keyrings[i].updateNetwork(netConfig);
+    }
+  }
+
   createFirstKeyTree() {
     this.clearKeyrings();
     return this.addNewKeyring("Tolar Keyring", { numberOfAccounts: 1 })

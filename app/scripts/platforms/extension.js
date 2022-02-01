@@ -196,6 +196,7 @@ export default class ExtensionPlatform {
     const networkIdToTypeMap = {
       mainnet: "explorer",
       testnet: "testnet-explorer",
+      'staging-gcp': "web-explorer.stagenet",
     };
 
     const netId = txMeta.taquinNetworkId;
@@ -207,7 +208,7 @@ export default class ExtensionPlatform {
       ? `https://${prefix}.tolar.io/transaction/${hash}`
       : undefined;
     const title = "Confirmed transaction";
-    const nonce = txMeta.nonce;
+    const nonce = txMeta.txParams.body.nonce;
     const message = isTolar
       ? `Transaction ${nonce} confirmed! View on Tolar Explorer. ${hash}`
       : `Transaction ${nonce} confirmed!`;

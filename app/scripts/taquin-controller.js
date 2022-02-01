@@ -180,6 +180,8 @@ export default class TaquinController extends EventEmitter {
     // ensure accountTracker updates balances after network change
     this.networkController.on("networkDidChange", () => {
       this.accountTracker._updateAccounts();
+      let netConfig = this.networkController.getNetworkConfig();
+      this.keyringController.updateNetwork(netConfig);
     });
 
     const additionalKeyrings = [
@@ -930,6 +932,8 @@ export default class TaquinController extends EventEmitter {
   async submitPassword(password) {
     try {
       await this.keyringController.submitPassword(password);
+      let netConfig = this.networkController.getNetworkConfig();
+      this.keyringController.updateNetwork(netConfig);
     } catch (e) {}
 
     // verify keyrings

@@ -12,16 +12,34 @@ const sigUtil = require("eth-sig-util");
 const type = "Tolar Keyring";
 const hdPathString = `m/44'/60'/0'/0`;
 
+import {
+  MAINNET,
+  TESTNET,
+  STAGINGGCP,
+  NETWORK_TYPE_TO_SUBDOMAIN_MAP,
+} from "../controllers/network/enums";
+
 export default class TolarKeyring extends HdKeyring {
   /* PUBLIC METHODS */
 
   constructor(opts) {
     super(opts);
-    this.web3 = new Web3("https://testnet-gateway.dev.tolar.io");
+    //this.web3 = new Web3("https://testnet-gateway.dev.tolar.io");
+    //this.web3 = new Web3("https://jsongw.stagenet.tolar.io");
 
     this.type = type;
 
     this.deserialize(opts);
+  }
+
+  updateNetwork(netConfig) {
+    const isTolar = Boolean(NETWORK_TYPE_TO_SUBDOMAIN_MAP[netConfig.network]);
+    if (isTolar) {
+      const tolarRpc = `https://${NETWORK_TYPE_TO_SUBDOMAIN_MAP[netConfig.network].subdomain}.tolar.io`;
+      this.web3 = new Web3(tolarRpc);
+    } else {
+      alert("Unsupported tolar RPC provided");
+    }
   }
 
   deserialize(opts = {}) {

@@ -7,10 +7,21 @@ const sigUtil = require("eth-sig-util");
 const SimpleKeyring = require("eth-simple-keyring");
 import Web3 from "@dreamfactoryhr/web3t";
 
+import {
+  MAINNET,
+  TESTNET,
+  STAGINGGCP,
+  NETWORK_TYPE_TO_SUBDOMAIN_MAP,
+} from "../network/enums";
+
 export class TolarSimpleKeyring extends SimpleKeyring {
   constructor(opts) {
     super(opts);
-    this.web3 = new Web3("https://testnet-gateway.dev.tolar.io");
+
+    //this.web3 = new Web3("https://testnet-gateway.dev.tolar.io");
+    //this.web3 = new Web3("https://jsongw.stagenet.tolar.io");
+
+
     // const fromPrivateFn = Account.fromPrivate;
     // const recoverFn = Account.recover;
     // Object.assign(Account, {
@@ -29,6 +40,16 @@ export class TolarSimpleKeyring extends SimpleKeyring {
     //   recover: (hash, signature) =>
     //     ethAddressToTolarAddress(recoverFn(hash, signature)),
     // });
+  }
+
+  updateNetwork(netConfig) {
+    const isTolar = Boolean(NETWORK_TYPE_TO_SUBDOMAIN_MAP[netConfig.network]);
+    if (isTolar) {
+      const tolarRpc = `https://${NETWORK_TYPE_TO_SUBDOMAIN_MAP[netConfig.network].subdomain}.tolar.io`;
+      this.web3 = new Web3(tolarRpc);
+    } else {
+      alert("Unsupported tolar RPC provided");
+    }
   }
 
   getAccounts() {

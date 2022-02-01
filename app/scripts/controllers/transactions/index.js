@@ -561,7 +561,19 @@ export default class TransactionController extends EventEmitter {
       this.txStateManager.updateTx(
         { ...txMeta, nonce },
         "transactions#approveTransaction"
-      );
+      );      
+
+      // this.txStateManager.updateTx(
+      //   { ...txMeta.txParams.body, nonce },
+      //   "transactions#approveTransaction"
+      // );   
+
+      txMeta.txParams.body.nonce = nonce;
+      this.txStateManager.updateTx(txMeta, "transactions#approveTransaction")
+
+      const txMeta2 = this.txStateManager.getTx(txId);
+
+
       const res = await this.web3.tolar.sendSignedTransaction(txMeta.txParams);
 
       this.txStateManager.setTxStatusConfirmed(txId, res);

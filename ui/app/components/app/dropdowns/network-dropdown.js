@@ -192,6 +192,8 @@ class NetworkDropdown extends Component {
       name = "Main Net";
     } else if (providerName === "testnet") {
       name = "Test Net";
+    } else if (providerName === "staging-gcp") {
+      name = "Staging GCP";
     } else {
       name = provider.nickname || this.context.t("unknownNetwork");
     }
@@ -293,6 +295,31 @@ class NetworkDropdown extends Component {
             }}
           >
             {"Test Net"}
+          </span>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem
+          key="staging-gcp"
+          closeMenu={() => this.props.hideNetworkDropdown()}
+          onClick={() => this.handleClick("staging-gcp")}
+          style={dropdownMenuItemStyle}
+        >
+          {providerType === "staging-gcp" ? (
+            <i className="fa fa-check" />
+          ) : (
+            <div className="network-check__transparent">✓</div>
+          )}
+          <NetworkDropdownIcon
+            backgroundColor="#79d351"
+            isSelected={providerType === "staging-gcp"}
+          />
+          <span
+            className="network-name-item"
+            style={{
+              color: providerType === "staging-gcp" ? "#ffffff" : "#9b9b9b",
+            }}
+          >
+            {"Staging GCP"}
           </span>
         </DropdownMenuItem>
         {/* <DropdownMenuItem
