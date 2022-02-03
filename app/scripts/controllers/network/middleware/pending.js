@@ -22,6 +22,7 @@ export function createPendingNonceMiddleware({ getPendingNonce }) {
 export function createPendingTxMiddleware(args) {
   return createAsyncMiddleware(async (req, res, next) => {
     const { signTolarTransaction } = args;
+    const { waitForUserConfirmation } = args;
     const { method, params } = req;
     if (method !== "taq_sendTransaction") {
       next();
@@ -54,6 +55,11 @@ export function createPendingTxMiddleware(args) {
     req.method = "tol_getNonce";
     let signing_result = await signTolarTransaction(...params);
 
-    res.result = {'txData': txData, 'txHash': signing_result.sig_data.hash};
+    try {
+      let user_confirmation = await waitForUserConfirmation();
+      res.result = {'txData': txData, 'txHash': signing_result.sig_data.hash};
+    } catch (error) {
+      throw new Error(`User rejected sending transaction: ${signing_result.sig_data.hash}`);
+    }
   });
 }

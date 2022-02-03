@@ -396,6 +396,18 @@ export default class TaquinController extends EventEmitter {
 
         return await this.txController.signEthTx(txData, txData.sender_address);
       },
+      waitForUserConfirmation: () => {
+        var self = this;
+        return new Promise(function(resolve, reject) {
+          self.txController.on(`tx:status-update`, (txId, status) => {
+            if (status === "confirmed") {
+              resolve(true);
+            } else if (status === "rejected") {
+              reject(new Error("User rejected"));
+            }
+          });
+        })
+      },
 
       // getPendingTransactionByHash: (hash) =>
       //   this.txController.getFilteredTxList({ hash, status: "submitted" })[0],
