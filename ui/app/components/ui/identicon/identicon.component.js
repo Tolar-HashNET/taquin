@@ -11,6 +11,7 @@ const getStyles = (diameter) => ({
   height: diameter,
   width: diameter,
   borderRadius: diameter / 2,
+  padding: '8px'
 });
 
 export default class Identicon extends PureComponent {
@@ -106,7 +107,7 @@ export default class Identicon extends PureComponent {
     return (
       <img
         className={classnames("identicon__eth-logo", className)}
-        src="./images/eth_logo.svg"
+        src="./images/tolar_logo_black.svg"
         style={getStyles(diameter)}
       />
     );
