@@ -17,6 +17,7 @@ function mapStateToProps(state) {
 }
 
 function QrCodeView(props) {
+  console.log(props)
   const { message, data } = props.Qr;
   const address = data;
   const qrImage = qrCode(4, "M");
