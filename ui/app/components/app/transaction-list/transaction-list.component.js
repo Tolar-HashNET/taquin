@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from "react";
 import PropTypes from "prop-types";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   incomingTxListSelector,
   incomingTxPaginationSelector,
@@ -15,7 +15,7 @@ import { useI18nContext } from "../../../hooks/useI18nContext";
 import TransactionListItem from "../transaction-list-item";
 import Button from "../../ui/button";
 import { TOKEN_CATEGORY_HASH } from "../../../helpers/constants/transactions";
-import { paginate, paginate2 } from "../../../store/actions";
+import { changePage } from "../../../store/actions";
 
 const PAGE_INCREMENT = 5;
 const getTransactionGroupRecipientAddressFilter = (recipientAddress) => {
@@ -53,8 +53,6 @@ export default function TransactionList({
   const [limit, setLimit] = useState(PAGE_INCREMENT);
   const t = useI18nContext();
 
-  const dispatch = useDispatch();
-
   const defaultPagination = {
     page: 1,
     pageSize: 5,
@@ -72,14 +70,14 @@ export default function TransactionList({
   );
 
   const nextPage = () => {
-    paginate2(currentPage + 1, dispatch);
+    changePage(currentPage + 1);
   };
   const prevPage = () => {
-    paginate2(currentPage - 1, dispatch);
+    changePage(currentPage - 1);
   };
 
   const firstPage = () => {
-    paginate2(1, dispatch);
+    changePage(1);
   };
   return (
     <div className="transaction-list">

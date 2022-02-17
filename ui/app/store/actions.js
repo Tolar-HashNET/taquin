@@ -29,6 +29,7 @@ import * as actionConstants from "./actionConstants";
 let background = null;
 let promisifiedBackground = null;
 export function _setBackgroundConnection(backgroundConnection) {
+  console.log(backgroundConnection.paginate(1))
   background = backgroundConnection;
   promisifiedBackground = pify(background);
 }
@@ -1714,42 +1715,12 @@ export function setTxPage() {
   };
 }
 
-export async function paginate(page) {
-  await promisifiedBackground.paginate(page);
-}
-
-export function paginate2(page) {
-  return (dispatch) => {
-    dispatch(showLoadingIndication());
-    return new Promise((resolve, reject) => {
-      try {
-        promisifiedBackground.paginate(page, (err) => {
-          dispatch(hideLoadingIndication());
-
-          if (err) {
-            // TODO DISPLAY ERROR
-            log.error(err.message);
-            reject(err);
-            return;
-          }
-
-          resolve(page);
-        });
-      } catch (e) {
-        reject(e);
-      }
-    })
-      .then(() => updateTaquinStateFromBackground())
-      .then((newState) => dispatch(updateTaquinState(newState)))
-      .then(() => {
-        dispatch(hideLoadingIndication());
-        return txData;
-      })
-      .catch((err) => {
-        dispatch(hideLoadingIndication());
-        return Promise.reject(err);
-      });
-  };
+export function changePage(page) {
+  background.paginate(page)
+  background.getState((error, newState) => {
+    console.log(error, newState)
+    updateTaquinState(newState)
+  })
 }
 
 export function showModal(payload) {
