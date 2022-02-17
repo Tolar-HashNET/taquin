@@ -86,10 +86,12 @@ export default class SettingsTab extends PureComponent {
             {t("currentLanguage")}
           </span>
           <span className="settings-page__content-description">
-            {currentLocaleName}
+            {/* Hardcoded until languages are added */}
+            {/* {currentLocaleName} */}
+            English
           </span>
         </div>
-        <div className="settings-page__content-item">
+        {/* <div className="settings-page__content-item">
           <div className="settings-page__content-item-col">
             <SimpleDropdown
               placeholder={t("selectLocale")}
@@ -98,7 +100,7 @@ export default class SettingsTab extends PureComponent {
               onSelect={async (newLocale) => updateCurrentLocale(newLocale)}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
