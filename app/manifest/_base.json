@@ -1,10 +1,10 @@
 {
-  "name": "__MSG_appName__",
-  "short_name": "__MSG_appName__",
+  "name": "Taquin",
+  "short_name": "Taquin",
   "version": "1.0.1",
   "manifest_version": 2,
   "author": "https://tolar.io",
-  "description": "__MSG_appDescription__",
+  "description": "A Tolar Wallet in your Browser",
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
