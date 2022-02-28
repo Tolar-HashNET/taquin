@@ -14,7 +14,7 @@
     font-size: 1rem;
     font-weight: 500;
     line-height: 19px;
-    color: $black;
+    color: #fff;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -39,7 +39,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: $Grey-000;
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     &:active {

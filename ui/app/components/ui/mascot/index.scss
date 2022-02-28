@@ -1,0 +1,16 @@
+.mascot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 24px 0;
+}
+
+.mascot__logo {
+    margin-bottom: 16px;
+}
+
+
+.mascot__title {
+    font-size: 18px;
+}

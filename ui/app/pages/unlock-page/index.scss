@@ -9,22 +9,22 @@
   color: $silver-chalice;
 
   &__container {
-    background: $white;
+    background: #1E202D;
     display: flex;
     align-self: stretch;
     justify-content: center;
     flex: 1 0 auto;
   }
 
-  &__mascot-container {
-    margin-top: 24px;
-  }
+  // &__mascot-container {
+  //   margin-top: 24px;
+  // }
 
   &__title {
     margin-top: 5px;
     font-size: 2rem;
     font-weight: 800;
-    color: $tundora;
+    color: #fff;
   }
 
   &__form {

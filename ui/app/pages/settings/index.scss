@@ -6,7 +6,7 @@
 
 .settings-page {
   position: relative;
-  background: $white;
+  background: #1E202D;
   display: flex;
   flex-flow: column nowrap;
 
@@ -20,6 +20,7 @@
     &__title {
       flex: 1 0 auto;
       font-size: 24px;
+      color: #fff;
     }
   }
 
@@ -27,12 +28,13 @@
   &__subheader--link {
     padding: 16px 4px;
     font-size: 20px;
-    border-bottom: 1px solid $alto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-right: 24px;
     height: 72px;
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
+    color: #fff;
 
     @media screen and (max-width: 575px) {
       display: none;
@@ -113,7 +115,8 @@
     flex-flow: row nowrap;
     height: 100%;
     overflow: auto;
-    border-top: 1px solid #d8d8d8;
+    // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color:#fff;
 
     &__tabs {
       display: flex;

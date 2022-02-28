@@ -6,7 +6,7 @@
 
   &__main-view {
     flex: 1 1 66.5%;
-    background: $white;
+    background: #1E202D;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -22,13 +22,13 @@
 
   // TODO: fix style import order so this isn't required to override specificity of `tab` class
   &__main-view &__tabs {
-    border: none;
-    box-shadow: 0 3px 4px rgba(135, 134, 134, 0.16);
+    // border: none;
+    // box-shadow: 0 3px 4px rgba(135, 134, 134, 0.16);
   }
 
   &__main-view &__tab {
     flex-grow: 1;
-    color: $Grey-500;
+    color: #00BDDE;
     padding: 16px 8px;
     font-size: 14px;
     font-weight: 500;
@@ -36,7 +36,7 @@
   }
 
   &__main-view &__tab--active {
-    color: $Blue-500;
+    color: #fff;
   }
 
   &__connect-status-text {
