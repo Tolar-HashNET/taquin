@@ -109,16 +109,14 @@ export default class Mascot extends Component {
       //   ref={this.mascotContainer}
       //   style={{ zIndex: 0 }}
       // />
-      <div>
+      <header className="mascot">
         <img
-          style={{ marginLeft: "-26px" }}
+          className="mascot__logo"
           height={40}
           src="/images/logo/logo-tolar-complex.3fcd21cf.svg"
         />
-        <div>
-          <h1 style={{ fontSize: "20px" }}>TAQUIN</h1>
-        </div>
-      </div>
+        <h1  className="mascot__title">TAQUIN</h1>
+      </header>
     );
   }
 }

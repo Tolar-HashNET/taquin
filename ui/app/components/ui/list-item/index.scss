@@ -2,13 +2,14 @@
   width: 100%;
   min-height: 86px;
   margin: 0;
-  background: #fff;
+  background: #1E202D;
   padding: 24px 16px;
 
   @include Paragraph;
 
-  border-top: 1px solid $mercury;
-  border-bottom: 1px solid $mercury;
+  // border-top: 1px solid $mercury;
+  // border-bottom: 1px solid $mercury;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: $Black-100;
   display: grid;
   grid-template-columns: 0fr repeat(11, 1fr);
@@ -20,7 +21,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $Grey-000;
+    background-color: rgba(255,255,255,0.1);
   }
 
   &__icon {
@@ -45,6 +46,8 @@
     align-items: center;
 
     > h2 {
+      // TODO: Check if this style breakes others
+      color: #fff;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

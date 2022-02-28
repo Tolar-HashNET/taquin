@@ -3,9 +3,9 @@
   padding: 8px;
   min-width: 50px;
   text-align: center;
-
-  &--active {
-    color: $black;
-    border-bottom: 2px solid $primary-blue;
-  }
+  // not in use overidden by other prop
+  // &--active {
+  //   color: $black;
+  //   border-bottom: 2px solid $primary-blue;
+  // }
 }
