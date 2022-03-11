@@ -2,7 +2,7 @@
   "name": "__MSG_appName__",
   "short_name": "__MSG_appName__",
   "version": "1.0.1",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "author": "https://tolar.io",
   "description": "__MSG_appDescription__",
   "commands": {
@@ -26,13 +26,9 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": [
-      "bg-libs.js",
-      "background.js"
-    ],
-    "persistent": true
+    "service_worker": "background.js"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "images/icon-16.png",
       "19": "images/icon-19.png",
@@ -57,30 +53,27 @@
       ],
       "run_at": "document_start",
       "all_frames": true
-    },
-    {
-      "matches": [
-        "*://connect.trezor.io/*/popup.html"
-      ],
-      "js": [
-        "vendor/trezor/content-script.js"
-      ]
     }
   ],
   "permissions": [
     "storage",
     "unlimitedStorage",
     "clipboardWrite",
-    "http://localhost:8545/",
-    "https://*.tolar.io/",
     "activeTab",
     "webRequest",
     "notifications"
   ],
-  "web_accessible_resources": [
-    "inpage.js",
-    "phishing.html"
+  "host_permissions": [
+    "http://localhost:8545/",
+    "https://*.tolar.io/"
   ],
+  "web_accessible_resources": [{
+    "resources": [
+      "inpage.js",
+      "phishing.html"
+    ],
+    "matches": [ "https://cryptoscamdb.org/*" ]
+  }],
   "externally_connectable": {
     "matches": [
       "https://tolar.io/*"
