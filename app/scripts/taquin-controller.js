@@ -20,7 +20,7 @@ import providerAsMiddleware from "eth-json-rpc-middleware/providerAsMiddleware";
 // import KeyringController from "eth-keyring-controller";
 import { Mutex } from "await-semaphore";
 import ethUtil from "ethereumjs-util";
-import log from "loglevel";
+// import log from "loglevel";
 import TrezorKeyring from "eth-trezor-keyring";
 import LedgerBridgeKeyring from "@metamask/eth-ledger-bridge-keyring";
 import EthQuery from "eth-query";
@@ -1168,7 +1168,7 @@ export default class TaquinController extends EventEmitter {
       return seedWords;
     } catch (err) {
       console.error(err);
-      log.error(err.message);
+      // log.error(err.message);
       throw err;
     }
   }
@@ -1273,7 +1273,7 @@ export default class TaquinController extends EventEmitter {
    * @returns {Promise<Object>} - Full state update.
    */
   signMessage(msgParams) {
-    log.info("TaquinController - signMessage");
+    // log.info("TaquinController - signMessage");
     const msgId = msgParams.taquinId;
 
     // sets the status op the message to 'approved'
@@ -1337,7 +1337,7 @@ export default class TaquinController extends EventEmitter {
    * @returns {Promise<Object>} - A full state update.
    */
   signPersonalMessage(msgParams) {
-    log.info("TaquinController - signPersonalMessage");
+    // log.info("TaquinController - signPersonalMessage");
     const msgId = msgParams.taquinId;
     // sets the status op the message to 'approved'
     // and removes the taquinId for signing
@@ -1395,7 +1395,7 @@ export default class TaquinController extends EventEmitter {
    * @returns {Promise<Object>} - A full state update.
    */
   async decryptMessageInline(msgParams) {
-    log.info("TaquinController - decryptMessageInline");
+    // log.info("TaquinController - decryptMessageInline");
     // decrypt the message inline
     const msgId = msgParams.taquinId;
     const msg = this.decryptMessageManager.getMsg(msgId);
@@ -1421,7 +1421,7 @@ export default class TaquinController extends EventEmitter {
    * @returns {Promise<Object>} - A full state update.
    */
   async decryptMessage(msgParams) {
-    log.info("TaquinController - decryptMessage");
+    // log.info("TaquinController - decryptMessage");
     const msgId = msgParams.taquinId;
     // sets the status op the message to 'approved'
     // and removes the taquinId for decryption
@@ -1441,7 +1441,7 @@ export default class TaquinController extends EventEmitter {
       // tells the listener that the message has been decrypted and can be returned to the dapp
       this.decryptMessageManager.setMsgStatusDecrypted(msgId, rawMess);
     } catch (error) {
-      log.info("TaquinController - eth_decrypt failed.", error);
+      // log.info("TaquinController - eth_decrypt failed.", error);
       this.decryptMessageManager.errorMessage(msgId, error);
     }
     return this.getState();
@@ -1488,7 +1488,7 @@ export default class TaquinController extends EventEmitter {
    * @returns {Promise<Object>} - A full state update.
    */
   async encryptionPublicKey(msgParams) {
-    log.info("TaquinController - encryptionPublicKey");
+    // log.info("TaquinController - encryptionPublicKey");
     const msgId = msgParams.taquinId;
     // sets the status op the message to 'approved'
     // and removes the taquinId for decryption
@@ -1506,7 +1506,7 @@ export default class TaquinController extends EventEmitter {
       // and can be returned to the dapp
       this.encryptionPublicKeyManager.setMsgStatusReceived(msgId, publicKey);
     } catch (error) {
-      log.info("TaquinController - eth_getEncryptionPublicKey failed.", error);
+      // log.info("TaquinController - eth_getEncryptionPublicKey failed.", error);
       this.encryptionPublicKeyManager.errorMessage(msgId, error);
     }
     return this.getState();
@@ -1553,7 +1553,7 @@ export default class TaquinController extends EventEmitter {
    * @returns {Object|undefined} - Full state update.
    */
   async signTypedMessage(msgParams) {
-    log.info("TaquinController - eth_signTypedData");
+    // log.info("TaquinController - eth_signTypedData");
     const msgId = msgParams.taquinId;
     const { version } = msgParams;
     try {
@@ -1576,7 +1576,7 @@ export default class TaquinController extends EventEmitter {
       this.typedMessageManager.setMsgStatusSigned(msgId, signature);
       return this.getState();
     } catch (error) {
-      log.info("TaquinController - eth_signTypedData failed.", error);
+      // log.info("TaquinController - eth_signTypedData failed.", error);
       this.typedMessageManager.errorMessage(msgId, error);
       return undefined;
     }
@@ -1695,7 +1695,7 @@ export default class TaquinController extends EventEmitter {
     const { hostname } = new URL(sender.url);
     // Check if new connection is blocked if phishing detection is on
     if (usePhishDetect && this.phishingController.test(hostname)) {
-      log.debug("Taquin - sending phishing warning for", hostname);
+      // log.debug("Taquin - sending phishing warning for", hostname);
       this.sendPhishingWarning(connectionStream, hostname);
       return;
     }
@@ -1764,7 +1764,7 @@ export default class TaquinController extends EventEmitter {
       );
       // report any error
       if (err) {
-        log.error(err);
+        // log.error(err);
       }
     });
     dnode.on("remote", (remote) => {
@@ -1815,7 +1815,7 @@ export default class TaquinController extends EventEmitter {
       });
       connectionId && this.removeConnection(origin, connectionId);
       if (err) {
-        log.error(err);
+        // log.error(err);
       }
     });
   }
@@ -1910,7 +1910,7 @@ export default class TaquinController extends EventEmitter {
       configStore.destroy();
       configStream.destroy();
       if (err) {
-        log.error(err);
+        // log.error(err);
       }
     });
   }

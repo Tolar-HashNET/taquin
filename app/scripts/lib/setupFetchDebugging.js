@@ -4,18 +4,16 @@
 // https://github.com/getsentry/sentry-javascript/pull/1293
 //
 
-export default function setupFetchDebugging () {
-  if (!window.fetch) {
-    return
-  }
-  const originalFetch = window.fetch
+export default async function setupFetchDebugging () {
+  const localWindow = await chrome.windows.getCurrent();
+  const originalFetch = localWindow.fetch
 
-  window.fetch = wrappedFetch
+  localWindow.fetch = wrappedFetch
 
   async function wrappedFetch (...args) {
     const initialStack = getCurrentStack()
     try {
-      return await originalFetch.call(window, ...args)
+      return await originalFetch.call(localWindow, ...args)
     } catch (err) {
       if (!err.stack) {
         console.warn('FetchDebugger - fetch encountered an Error without a stack', err)

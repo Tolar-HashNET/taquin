@@ -80,7 +80,7 @@ export default class ExtensionPlatform {
     return extension.runtime.getManifest().version;
   }
 
-  openExtensionInBrowser(route = null, queryString = null) {
+  async openExtensionInBrowser(route = null, queryString = null) {
     let extensionURL = extension.runtime.getURL("home.html");
 
     if (queryString) {
@@ -92,7 +92,8 @@ export default class ExtensionPlatform {
     }
     this.openTab({ url: extensionURL });
     if (getEnvironmentType() !== ENVIRONMENT_TYPE_BACKGROUND) {
-      window.close();
+      const localWindow = await chrome.windows.getCurrent();
+      localWindow.close();
     }
   }
 

@@ -1,4 +1,4 @@
-import log from 'loglevel'
+// import log from 'loglevel'
 
 const FIXTURE_SERVER_HOST = 'localhost'
 const FIXTURE_SERVER_PORT = 12345
@@ -24,12 +24,13 @@ export default class ReadOnlyNetworkStore {
    */
   async _init () {
     try {
-      const response = await window.fetch(FIXTURE_SERVER_URL)
+      const localWindow = await chrome.windows.getCurrent();
+      const response = await localWindow.fetch(FIXTURE_SERVER_URL)
       if (response.ok) {
         this._state = await response.json()
       }
     } catch (error) {
-      log.debug(`Error loading network state: '${error.message}'`)
+      // log.debug(`Error loading network state: '${error.message}'`)
     } finally {
       this._initialized = true
     }

@@ -61,7 +61,8 @@
     "clipboardWrite",
     "activeTab",
     "webRequest",
-    "notifications"
+    "notifications",
+    "tabs"
   ],
   "host_permissions": [
     "http://localhost:8545/",

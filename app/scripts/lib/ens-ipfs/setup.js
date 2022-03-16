@@ -48,7 +48,8 @@ export default function setupEnsIpfsResolver ({ provider, getCurrentNetwork, get
         const resolvedUrl = `https://${hash}.${type.slice(0, 4)}.${ipfsGateway}${path}${search || ''}${fragment || ''}`
         try {
           // check if ipfs gateway has result
-          const response = await window.fetch(resolvedUrl, { method: 'HEAD' })
+          const localWindow = await chrome.windows.getCurrent();
+          const response = await localWindow.fetch(resolvedUrl, { method: 'HEAD' })
           if (response.status === 200) {
             url = resolvedUrl
           }

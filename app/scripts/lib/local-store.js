@@ -1,5 +1,5 @@
 import extension from 'extensionizer'
-import log from 'loglevel'
+// import log from 'loglevel'
 import { checkForError } from './util'
 
 /**
@@ -13,7 +13,7 @@ export default class ExtensionStore {
   constructor () {
     this.isSupported = Boolean(extension.storage.local)
     if (!this.isSupported) {
-      log.error('Storage local API not available.')
+      // log.error('Storage local API not available.')
     }
   }
 

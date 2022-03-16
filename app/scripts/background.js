@@ -10,12 +10,12 @@ import setupFetchDebugging from "./lib/setupFetchDebugging";
 setupFetchDebugging();
 
 // polyfills
-import "abortcontroller-polyfill/dist/polyfill-patch-fetch";
+// import "abortcontroller-polyfill/dist/polyfill-patch-fetch";
 
 import endOfStream from "end-of-stream";
 import pump from "pump";
 import debounce from "debounce-stream";
-import log from "loglevel";
+// import log from "loglevel";
 import extension from "extensionizer";
 import storeTransform from "obs-store/lib/transform";
 import asStream from "obs-store/lib/asStream";
@@ -41,7 +41,7 @@ import {
 
 const firstTimeState = { ...rawFirstTimeState, ...global.TAQUIN_TEST_CONFIG };
 
-log.setDefaultLevel(process.env.TAQUIN_DEBUG ? "debug" : "warn");
+// log.setDefaultLevel(process.env.TAQUIN_DEBUG ? "debug" : "warn");
 
 const platform = new ExtensionPlatform();
 const notificationManager = new NotificationManager();
@@ -66,7 +66,7 @@ if (inTest || process.env.TAQUIN_DEBUG) {
 }
 
 // initialization flow
-initialize().catch(log.error);
+initialize().catch();
 
 async function initialize() {
   const initState = await loadStateFromPersistence();
@@ -167,7 +167,7 @@ function setupController(initState, initLangCode) {
     storeTransform(versionifyData),
     createStreamSink(persistData),
     (error) => {
-      log.error("Taquin - Persistence pipeline failed", error);
+//      log.error("Taquin - Persistence pipeline failed", error);
     }
   );
 
@@ -188,7 +188,7 @@ function setupController(initState, initLangCode) {
         await localStore.set(state);
       } catch (err) {
         // log error so we dont break the pipeline
-        log.error("error setting state in local store:", err);
+        // log.error("error setting state in local store:", err);
       }
     }
   }
@@ -329,8 +329,8 @@ function setupController(initState, initLangCode) {
     if (count) {
       label = String(count);
     }
-    extension.browserAction.setBadgeText({ text: label });
-    extension.browserAction.setBadgeBackgroundColor({ color: "#037DD6" });
+    extension.action.setBadgeText({ text: label });
+    extension.action.setBadgeBackgroundColor({ color: "#037DD6" });
   }
 
   return Promise.resolve();
