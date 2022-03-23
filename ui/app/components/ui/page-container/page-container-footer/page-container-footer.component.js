@@ -40,27 +40,23 @@ export default class PageContainerFooter extends Component {
 
         <footer>
           {!hideCancel && (
-            <Button
-              type={cancelButtonType || 'default'}
-              large={buttonSizeLarge}
-              className="page-container__footer-button"
+            <button
+              className='tolar-button tolar-button--secondary tolar-button--wide'
               onClick={(e) => onCancel(e)}
               data-testid="page-container-footer-cancel"
             >
               { cancelText || this.context.t('cancel') }
-            </Button>
+            </button>
           )}
 
-          <Button
-            type={submitButtonType || 'secondary'}
-            large={buttonSizeLarge}
-            className="page-container__footer-button"
+          <button
+            className='tolar-button tolar-button--wide'
             disabled={disabled}
             onClick={(e) => onSubmit(e)}
             data-testid="page-container-footer-next"
           >
             { submitText || this.context.t('next') }
-          </Button>
+          </button>
         </footer>
 
         {children && (

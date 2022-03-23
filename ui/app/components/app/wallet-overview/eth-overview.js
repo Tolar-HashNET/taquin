@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import classnames from "classnames";
 import { useHistory } from "react-router-dom";
 
-import Button from "../../ui/button";
 import Identicon from "../../ui/identicon";
 import { I18nContext } from "../../../contexts/i18n";
 import { SEND_ROUTE } from "../../../helpers/constants/routes";
@@ -12,13 +11,11 @@ import { useMetricEvent } from "../../../hooks/useMetricEvent";
 import Tooltip from "../../ui/tooltip";
 import UserPreferencedCurrencyDisplay from "../user-preferenced-currency-display";
 import { PRIMARY, SECONDARY } from "../../../helpers/constants/common";
-import { showModal } from "../../../store/actions";
 import {
   isBalanceCached,
   getSelectedAccount,
   getShouldShowFiat,
 } from "../../../selectors/selectors";
-import PaperAirplane from "../../ui/icon/paper-airplane-icon";
 import WalletOverview from "./wallet-overview";
 
 const EthOverview = ({ className }) => {
@@ -86,30 +83,15 @@ const EthOverview = ({ className }) => {
       }
       buttons={
         <>
-          {/* <Button
-            type="primary"
-            className="eth-overview__button"
-            rounded
-            onClick={() => {
-              depositEvent();
-              dispatch(showModal({ name: "DEPOSIT_ETHER" }));
-            }}
-          >
-            {t("buy")}
-          </Button> */}
-          <Button
-            type="secondary"
-            className="eth-overview__button"
-            rounded
-            icon={<PaperAirplane color="#037DD6" size={20} />}
+          <button
+            className='tolar-button'
             onClick={() => {
               sendEvent();
               history.push(SEND_ROUTE);
             }}
-            data-testid="eth-overview-send"
           >
             {t("send")}
-          </Button>
+          </button>
         </>
       }
       className={className}

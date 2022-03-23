@@ -2,14 +2,14 @@
   width: 100%;
   min-height: 86px;
   margin: 0;
-  background: #1E202D;
+  background: $tolar-dark;
   padding: 24px 16px;
 
   @include Paragraph;
 
   // border-top: 1px solid $mercury;
   // border-bottom: 1px solid $mercury;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid $tolar-border;
   color: $Black-100;
   display: grid;
   grid-template-columns: 0fr repeat(11, 1fr);
@@ -47,7 +47,7 @@
 
     > h2 {
       // TODO: Check if this style breakes others
-      color: #fff;
+      color: $tolar-light;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

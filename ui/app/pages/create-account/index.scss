@@ -3,7 +3,7 @@
 
 .new-account {
   width: 375px;
-  background-color: #fff;
+  background-color: $tolar-dark;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.08);
   z-index: 25;
   height: unset;
@@ -21,7 +21,7 @@
   &__header {
     display: flex;
     flex-flow: column;
-    border-bottom: 1px solid $geyser;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   &__title {
@@ -70,7 +70,7 @@
   padding: 30px;
 
   &__input-label {
-    color: $scorpion;
+    color: $tolar-light;
     font-size: 16px;
     line-height: 21px;
     align-self: flex-start;
@@ -79,14 +79,18 @@
   &__input {
     height: 54px;
     width: 315.84px;
-    border: 1px solid $geyser;
-    border-radius: 4px;
-    background-color: $white;
-    color: $scorpion;
+    border: 1px solid $tolar-light;
+    // border-radius: 4px;
+    background-color: transparent;
+    color: $tolar-light;
     font-size: 16px;
     line-height: 21px;
     margin-top: 15px;
     padding: 0 20px;
+
+    &:focus {
+      border-color: $tolar-action;
+    }
   }
 
   &__buttons {
@@ -94,6 +98,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    gap: 12px;
   }
 
   &__button {

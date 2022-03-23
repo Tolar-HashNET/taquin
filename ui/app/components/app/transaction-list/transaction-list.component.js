@@ -16,6 +16,7 @@ import TransactionListItem from "../transaction-list-item";
 import Button from "../../ui/button";
 import { TOKEN_CATEGORY_HASH } from "../../../helpers/constants/transactions";
 import { changePage } from "../../../store/actions";
+import { Pagination } from "../../ui/pagination";
 
 const PAGE_INCREMENT = 5;
 const getTransactionGroupRecipientAddressFilter = (recipientAddress) => {
@@ -57,28 +58,19 @@ export default function TransactionList({
     page: 1,
     pageSize: 5,
   };
+
   const tolarCompletedTransactions = useSelector(incomingTxListSelector);
+
   const pagination =
     useSelector(incomingTxPaginationSelector) || defaultPagination;
+
   const { page: currentPage = 1, isLoading = false } = pagination;
 
-  const completedTransactions = tolarCompletedTransactions;
+  const handleChangePage = (operator) => {
+    console.log("clicking handle page change", operator)
+    changePage(currentPage + operator)
+  }
 
-  const viewMore = useCallback(
-    () => setLimit((prev) => prev + PAGE_INCREMENT),
-    []
-  );
-
-  const nextPage = () => {
-    changePage(currentPage + 1);
-  };
-  const prevPage = () => {
-    changePage(currentPage - 1);
-  };
-
-  const firstPage = () => {
-    changePage(1);
-  };
   return (
     <div className="transaction-list">
       {isLoading && (
@@ -89,15 +81,27 @@ export default function TransactionList({
 
       <div className="transaction-list__transactions">
         <div className="transaction-list__completed-transactions">
-          {completedTransactions.length > 0 ? (
-            completedTransactions
-              .slice(0, limit)
-              .map((transactionGroup, index) => (
-                <TransactionListItem
-                  transactionGroup={transactionGroup}
-                  key={`${transactionGroup.nonce}:${limit + index - 10}`}
+          {tolarCompletedTransactions.length > 0 ? (
+            <>
+              {tolarCompletedTransactions
+                .slice(0, limit)
+                .map((transactionGroup, index) => (
+                  <TransactionListItem
+                    transactionGroup={transactionGroup}
+                    key={`${transactionGroup.nonce}:${limit + index - 10}`}
+                  />
+                ))
+              }
+              {
+                (tolarCompletedTransactions.length >= pagination.pageSize || pagination.page !== 1) &&
+                <Pagination 
+                  currentPage={currentPage}
+                  changePage={handleChangePage}
+                  prevDisabled={currentPage === 1}
+                  nextDisabled={tolarCompletedTransactions.length < pagination.pageSize}
                 />
-              ))
+              }
+            </>
           ) : (
             <div className="transaction-list__empty">
               <div className="transaction-list__empty-text">
@@ -105,43 +109,7 @@ export default function TransactionList({
               </div>
             </div>
           )}
-          <div style={{ display: "flex" }}>
-            <Button
-              className="transaction-list__view-more"
-              type="secondary"
-              rounded
-              onClick={prevPage}
-              disabled={pagination.page <= 1}
-            >
-              Previous Page
-            </Button>
-
-            <Button
-              className="transaction-list__view-more"
-              type="secondary"
-              rounded
-            >
-              {currentPage}
-            </Button>
-
-            <Button
-              className="transaction-list__view-more"
-              type="secondary"
-              rounded
-              onClick={nextPage}
-              disabled={completedTransactions.length < pagination.pageSize}
-            >
-              Next Page
-            </Button>
-          </div>
-          <Button
-            className="transaction-list__view-more"
-            type="secondary"
-            rounded
-            onClick={firstPage}
-          >
-            First Page
-          </Button>
+         
         </div>
       </div>
     </div>

@@ -1718,7 +1718,6 @@ export function setTxPage() {
 export function changePage(page) {
   background.paginate(page)
   background.getState((error, newState) => {
-    console.log(error, newState)
     updateTaquinState(newState)
   })
 }

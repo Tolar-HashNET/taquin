@@ -3,9 +3,8 @@
 .send {
   &__header {
     position: relative;
-    background-color: $Grey-000;
     border-bottom: none;
-    padding: 14px 0 3px 0;
+    padding: 12px 0;
 
     .page-container__title {
       @include H4;
@@ -33,11 +32,11 @@
   }
 
   &__to-row {
-    margin: 0;
-    padding: 0.5rem;
-    flex: 0 0 auto;
-    background-color: $Grey-000;
-    border-bottom: 1px solid $alto;
+    // margin: 0;
+    // padding: 0.5rem;
+    // flex: 0 0 auto;
+    // background-color: $Grey-000;
+    // border-bottom: 1px solid $alto;
   }
 
   &__select-recipient-wrapper {
@@ -94,14 +93,14 @@
     &__group-label {
       @include H8;
 
-      background-color: $Grey-000;
+      // background-color: $Grey-000;
       color: $Grey-600;
       line-height: 0.875rem;
       padding: 0.5rem 1rem;
-      border-bottom: 1px solid $alto;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
       &:first-of-type {
-        border-top: 1px solid $alto;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
     }
 
@@ -111,7 +110,7 @@
 
       padding: 0.75rem 1rem;
       align-items: center;
-      border-bottom: 1px solid $alto;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       cursor: pointer;
 
       &:hover {
@@ -133,7 +132,7 @@
       &__title {
         font-size: 0.875rem;
         line-height: 1.25rem;
-        color: $black;
+        color: $tolar-light;
       }
 
       &__subtitle {
@@ -159,20 +158,19 @@
     flex: 1 1 auto;
     width: 0;
     align-items: center;
-    background: $white;
-    border-radius: 0.5rem;
     padding: 0.75rem 0.5rem;
-    border: 1px solid $Grey-100;
+    border: 1px solid rgba(255, 255, 255, 0.4);
     transition: border-color 150ms ease-in-out;
 
     &:focus-within {
-      border-color: $Grey-500;
+      border-color: $tolar-action;
     }
 
     &__status-icon {
       @extend %bg-contain;
 
-      background-image: url("/images/search-black.svg");
+      -webkit-mask-image: url("/images/search-black.svg");
+      background-color: $tolar-light;
       width: 1.125rem;
       height: 1.125rem;
       margin: 0.25rem 0.5rem 0.25rem 0.25rem;
@@ -183,6 +181,8 @@
 
       &--valid {
         background-image: url("/images/check-green-solid.svg");
+        -webkit-mask-image: none;
+        background-color: transparent;
       }
     }
 
@@ -193,6 +193,8 @@
       width: 0;
       border: 0;
       outline: none;
+      background: transparent;
+      color: $tolar-light;
 
       &::placeholder {
         color: $Grey-200;

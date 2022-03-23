@@ -38,14 +38,14 @@ function ViewContact({
           <div className="address-book__header__name">{name}</div>
         </div>
         <div className="address-book__view-contact__group">
-          <Button
-            type="secondary"
+          <button
+            className="tolar-button"
             onClick={() => {
               history.push(`${editRoute}/${address}`);
             }}
           >
             {t("edit")}
-          </Button>
+          </button>
         </div>
         <div className="address-book__view-contact__group">
           <div className="address-book__view-contact__group__label">

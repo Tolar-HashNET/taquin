@@ -17,7 +17,7 @@
     font-size: 28px;
     text-align: center;
     margin-top: 65px;
-    color: black;
+    color: $tolar-light;
   }
 
   &__select-buttons {
@@ -33,9 +33,9 @@
     justify-content: space-evenly;
     width: 388px;
     height: 278px;
-    border: 1px solid #d8d8d8;
+    border: 1px solid rgba(255, 255, 255, 0.1);;
     box-sizing: border-box;
-    border-radius: 10px;
+    // border-radius: 10px;
     margin-left: 22px;
 
     .first-time-flow__button {
@@ -62,7 +62,7 @@
     font-weight: normal;
     line-height: 28px;
     font-size: 20px;
-    color: #000;
+    color: $tolar-light;
     margin-top: 12px;
     text-align: center;
   }
@@ -75,10 +75,5 @@
     color: #7a7a7b;
     margin-top: 10px;
     text-align: center;
-  }
-
-  button {
-    font-weight: 500;
-    width: 221px;
   }
 }

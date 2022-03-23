@@ -34,11 +34,11 @@ export default function TransactionListItem({
   transactionGroup,
   isEarliestNonce = false,
 }) {
-  const t = useI18nContext();
-  const history = useHistory();
-  const { hasCancelled } = transactionGroup;
-  const [showDetails, setShowDetails] = useState(false);
-  const { id, time: submittedTime, gas_price: gasPrice } = transactionGroup;
+  // const t = useI18nContext();
+  // const history = useHistory();
+  // const { hasCancelled } = transactionGroup;
+  // const [showDetails, setShowDetails] = useState(false);
+  // const { id, time: submittedTime, gas_price: gasPrice } = transactionGroup;
 
   const {
     title = "",
@@ -54,33 +54,76 @@ export default function TransactionListItem({
     hash,
     url,
   } = useTolarTransactionDisplayData(transactionGroup);
+
   const { sender_address: senderAddress = "" } = transactionGroup;
-  const otherAddressDisplayData =
-    category === "sent-tx"
-      ? `To: ${recipientAddress}`
-      : `From ${senderAddress}`;
-  const timeRemaining = useTransactionTimeRemaining(
-    isPending,
-    isEarliestNonce,
-    submittedTime,
-    gasPrice
-  );
-  const isSignatureReq = category === TRANSACTION_CATEGORY_SIGNATURE_REQUEST;
-  const isApproval = category === TRANSACTION_CATEGORY_APPROVAL;
-  const isUnapproved = status === UNAPPROVED_STATUS;
+
+
+  // const timeRemaining = useTransactionTimeRemaining(
+  //   isPending,
+  //   isEarliestNonce,
+  //   submittedTime,
+  //   gasPrice
+  // );
+
+  // const isSignatureReq = category === TRANSACTION_CATEGORY_SIGNATURE_REQUEST;
+  // const isApproval = category === TRANSACTION_CATEGORY_APPROVAL;
+  // const isUnapproved = status === UNAPPROVED_STATUS;
   const className = classnames("transaction-list-item", {
     "transaction-list-item--unconfirmed":
       isPending ||
       [FAILED_STATUS, DROPPED_STATUS, REJECTED_STATUS].includes(status),
   });
 
-  const toggleShowDetails = useCallback(() => {
-    setShowDetails((prev) => !prev);
-  }, [isUnapproved, history, id]);
+  {/* Details are removed in version before this and they are not in use */}
+  // const toggleShowDetails = useCallback(() => {
+  //   setShowDetails((prev) => !prev);
+  // }, [isUnapproved, history, id]);
 
   return (
     <>
-      <ListItem
+      <article className="transaction">
+        <header className="transaction__header">
+          <p className="t t--dimmed">{date}</p>
+          {
+            category === "sent-tx" ? (
+              <span className="transaction__header__type transaction__header__type--otcoming">
+                Outgoing
+              </span>
+            ) : (
+              <span className="transaction__header__type transaction__header__type--incoming">
+                Incoming
+              </span>
+            )
+          }
+        </header>
+        
+        <section className="transaction__content">
+          <div className="transaction__content__address s--right-tiny">
+            <a
+              className="t t--action s--bottom-small t--elipsis"
+              href={url}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {hash}
+            </a>
+            <p className="t t--elipsis">{ category === "sent-tx" ? 
+                  (
+                    <><span className="t--dimmed s--right-tiny">To:</span> {recipientAddress}</>
+                  ) :
+                  (
+                    <><span className="t--dimmed s--right-tiny">From:</span>{senderAddress}</>
+                  )
+                }
+            </p>
+          </div>
+          <div className="transaction__content__price">
+            <p className="t t--large">{primaryCurrency}</p>
+            <p className="t t--medium">{secondaryCurrency}</p>
+          </div>
+        </section>
+      </article>
+      {/* <ListItem
         className={className}
         title={title}
         titleIcon={
@@ -120,14 +163,16 @@ export default function TransactionListItem({
         }
       >
         <div className="transaction-list-item__pending-actions"></div>
-      </ListItem>
-      {showDetails && (
+      </ListItem> */}
+      {/* Details are removed in version before this and they are not in use */}
+
+      {/* {showDetails && (
         <TransactionListItemDetails
           title={title}
           onClose={toggleShowDetails}
           transactionGroup={transactionGroup}
         />
-      )}
+      )} */}
     </>
   );
 }

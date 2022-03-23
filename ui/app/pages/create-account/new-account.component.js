@@ -59,22 +59,18 @@ export default class NewAccountCreateForm extends Component {
             }
           />
           <div className="new-account-create-form__buttons">
-            <Button
-              type="default"
-              large
-              className="new-account-create-form__button"
+            <button
+              className="tolar-button tolar-button--secondary tolar-button--wide"
               onClick={() => history.push(mostRecentOverviewPage)}
             >
               {this.context.t("cancel")}
-            </Button>
-            <Button
-              type="secondary"
-              large
-              className="new-account-create-form__button"
+            </button>
+            <button
+              className="tolar-button tolar-button--wide"
               onClick={createClick}
             >
               {this.context.t("create")}
-            </Button>
+            </button>
           </div>
         </div>
       </div>

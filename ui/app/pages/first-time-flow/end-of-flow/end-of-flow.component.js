@@ -81,13 +81,12 @@ export default class EndOfFlowScreen extends PureComponent {
             </span>
           </a>
         </div> */}
-        <Button
-          type="primary"
-          className="first-time-flow__button"
+        <button
+          className="tolar-button"
           onClick={this.onComplete}
         >
           {t("endOfFlowMessage10")}
-        </Button>
+        </button>
         {onboardingInitiator ? (
           <Snackbar
             content={t("onboardingReturnNotice", [

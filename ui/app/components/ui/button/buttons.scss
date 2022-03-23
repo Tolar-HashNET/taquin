@@ -169,7 +169,7 @@ $warning-light-orange: #f8b588;
 .btn-link {
   @include H4;
 
-  color: #00BDDE;
+  color: $tolar-action;
   line-height: 1.25rem;
   cursor: pointer;
   background-color: transparent;

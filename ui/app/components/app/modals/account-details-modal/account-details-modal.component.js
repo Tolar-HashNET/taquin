@@ -57,10 +57,9 @@ export default class AccountDetailsModal extends Component {
         />
 
         <div className="account-details-modal__divider" />
-
-        <Button
-          type="secondary"
-          className="account-details-modal__button"
+        <button
+          style={{marginBottom: "16px"}}
+          className='tolar-button'
           onClick={() => {
             global.platform.openTab({
               url: getAccountLink(address, network, rpcPrefs),
@@ -68,21 +67,15 @@ export default class AccountDetailsModal extends Component {
           }}
         >
           Explorer
-          {/* {rpcPrefs.blockExplorerUrl
-            ? this.context.t("blockExplorerView", [
-                rpcPrefs.blockExplorerUrl.match(/^https?:\/\/(.+)/u)[1],
-              ])
-            : this.context.t("viewOnEtherscan")} */}
-        </Button>
+        </button>
 
         {exportPrivateKeyFeatureEnabled ? (
-          <Button
-            type="secondary"
-            className="account-details-modal__button"
+          <button
+            className='tolar-button'
             onClick={() => showExportPrivateKeyModal()}
           >
-            {this.context.t("exportPrivateKey")}
-          </Button>
+             {this.context.t("exportPrivateKey")}
+          </button>
         ) : null}
       </AccountModalContainer>
     );

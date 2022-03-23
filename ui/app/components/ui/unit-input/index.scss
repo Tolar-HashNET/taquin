@@ -3,10 +3,8 @@
   flex-flow: row nowrap;
   align-items: center;
   min-height: 54px;
-  border: 1px solid #dedede;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #4d4d4d;
+  border: 1px solid transparentize($tolar-light, .8);
+  color: $tolar-light;
   font-size: 16px;
   padding: 8px 10px;
   position: relative;
@@ -34,7 +32,8 @@
   }
 
   &__input {
-    color: #4d4d4d;
+    color: $tolar-light;
+    background: transparent;
     font-size: 1rem;
     border: none;
     max-width: 22ch;

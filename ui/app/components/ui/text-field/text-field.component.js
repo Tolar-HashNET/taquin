@@ -39,7 +39,6 @@ const styles = {
     },
   },
   materialWhitePaddedFocused: {
-    color: "#fff",
   },
   materialWhitePaddedUnderline: {
     "&:after": {
@@ -56,7 +55,8 @@ const styles = {
     },
   },
   formLabelFocused: {},
-  inputFocused: {},
+  inputFocused: {
+  },
   inputRoot: {
     "label + &": {
       marginTop: "9px",
@@ -68,7 +68,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     "&$inputFocused": {
-      border: "1px solid #2f9ae0",
+      border: "1px solid #13ceef",
     },
   },
   largeInputLabel: {
@@ -81,7 +81,7 @@ const styles = {
   },
   inputMultiline: {
     lineHeight: "initial !important",
-  },
+  }
 };
 
 const getMaterialThemeInputProps = ({

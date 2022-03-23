@@ -103,23 +103,19 @@ class RevealSeedPage extends Component {
     return (
       <div className="page-container__footer">
         <footer>
-          <Button
-            type="default"
-            large
-            className="page-container__footer-button"
+          <button
+            className='tolar-button tolar-button--secondary tolar-button--wide'
             onClick={() => this.props.history.push(this.props.mostRecentOverviewPage)}
           >
             {this.context.t('cancel')}
-          </Button>
-          <Button
-            type="secondary"
-            large
-            className="page-container__footer-button"
+          </button>
+          <button
+            className='tolar-button tolar-button--wide'
             onClick={(event) => this.handleSubmit(event)}
             disabled={this.state.password === ''}
           >
             {this.context.t('next')}
-          </Button>
+          </button>
         </footer>
       </div>
     )
@@ -128,14 +124,13 @@ class RevealSeedPage extends Component {
   renderRevealSeedFooter () {
     return (
       <div className="page-container__footer">
-        <Button
-          type="default"
-          large
-          className="page-container__footer-button"
+        <button
+          style={{marginTop: "16px"}}
+          className='tolar-button tolar-button--wide'
           onClick={() => this.props.history.push(this.props.mostRecentOverviewPage)}
         >
           {this.context.t('close')}
-        </Button>
+        </button>
       </div>
     )
   }

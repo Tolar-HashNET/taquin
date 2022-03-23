@@ -218,14 +218,13 @@ export default class NewAccount extends PureComponent {
               )])}
             </span>
           </div> */}
-          <Button
-            type="primary"
-            className="first-time-flow__button"
+          <button
+            className="tolar-button first-time-flow__new-password-button"
             disabled={!this.isValid()}
             onClick={this.handleCreate}
           >
             {t("create")}
-          </Button>
+          </button>
         </form>
       </div>
     );

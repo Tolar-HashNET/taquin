@@ -3,7 +3,7 @@
   grid-template-columns: 30% minmax(30%, 1fr) 30%;
   column-gap: 5px;
   padding: 0 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid $tolar-border;
 
   .menu-bar__account-options {
     background: none;
@@ -11,7 +11,7 @@
     padding: 0 8px 0 5px;
     place-self: center end;
 
-    color: #fff;
+    color: $tolar-light;
   }
 
   .selected-account {

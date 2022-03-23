@@ -1,8 +1,9 @@
 .confirm-page-container-summary {
   padding: 16px 24px 0;
-  background-color: #f9fafa;
+  // background-color: #f9fafa;
   height: 133px;
   box-sizing: border-box;
+  color: $tolar-light;
 
   &__action-row {
     display: flex;

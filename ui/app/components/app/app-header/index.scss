@@ -1,6 +1,6 @@
 .app-header {
   align-items: center;
-  background: #1E202D;
+  background: $tolar-dark;
   position: relative;
   z-index: $header-z-index;
   display: flex;
@@ -8,7 +8,7 @@
   width: 100%;
   flex: 0 0 auto;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid $tolar-border;
 
   @media screen and (max-width: 575px) {
     padding: 1rem;

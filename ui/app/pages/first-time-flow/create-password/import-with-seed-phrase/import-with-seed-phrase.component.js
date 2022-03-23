@@ -328,14 +328,21 @@ export default class ImportWithSeedPhrase extends PureComponent {
             ])}
           </span>
         </div> */}
-        <Button
+        {/* <Button
           type="primary"
           submit
           className="first-time-flow__button"
           disabled={!this.isValid()}
         >
           {t("import")}
-        </Button>
+        </Button> */}
+        <button
+          className="tolar-button first-time-flow__import-button"
+          disabled={!this.isValid()}
+          type="submit"
+        >
+          {t("import")}
+        </button>
       </form>
     );
   }

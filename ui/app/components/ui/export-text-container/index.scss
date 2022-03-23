@@ -13,15 +13,16 @@
     justify-content: center;
     padding: 20px;
     border-radius: 4px;
-    background: $alabaster;
+    background: transparent;
   }
 
   &__text {
     resize: none;
     border: none;
-    background: $alabaster;
+    background: transparent;
     font-size: 20px;
     text-align: center;
+    color: $tolar-light;
   }
 
   &__buttons-container {

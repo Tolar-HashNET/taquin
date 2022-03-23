@@ -108,32 +108,32 @@ export default class UnlockPage extends Component {
     }
   }
 
-  renderSubmitButton() {
-    const style = {
-      backgroundColor: "#13ceef",
-      color: "white",
-      marginTop: "20px",
-      height: "60px",
-      fontWeight: "400",
-      boxShadow: "none",
-      borderRadius: "4px",
-    };
+  // renderSubmitButton() {
+  //   const style = {
+  //     backgroundColor: "#13ceef",
+  //     color: "white",
+  //     marginTop: "20px",
+  //     height: "60px",
+  //     fontWeight: "400",
+  //     boxShadow: "none",
+  //     borderRadius: "4px",
+  //   };
 
-    return (
-      <Button
-        type="submit"
-        style={style}
-        disabled={!this.state.password}
-        fullWidth
-        variant="raised"
-        size="large"
-        onClick={this.handleSubmit}
-        disableRipple
-      >
-        {this.context.t("unlock")}
-      </Button>
-    );
-  }
+  //   return (
+  //     <Button
+  //       type="submit"
+  //       style={style}
+  //       disabled={!this.state.password}
+  //       fullWidth
+  //       variant="raised"
+  //       size="large"
+  //       onClick={this.handleSubmit}
+  //       disableRipple
+  //     >
+  //       {this.context.t("unlock")}
+  //     </Button>
+  //   );
+  // }
 
   render() {
     const { password, error } = this.state;
@@ -166,7 +166,17 @@ export default class UnlockPage extends Component {
               fullWidth
             />
           </form>
-          {this.renderSubmitButton()}
+          {/* {this.renderSubmitButton()} */}
+          {/* TODO: Remove inline style */}
+          <button
+            style={{marginTop: "20px"}}
+            className='tolar-button tolar-button--wide'
+            disabled={!this.state.password}
+            onClick={this.handleSubmit}
+          >
+              {this.context.t("unlock")}
+          </button>
+          
           <div className="unlock-page__links">
             <div className="unlock-page__link" onClick={() => onRestore()}>
               {t("restoreFromSeed")}

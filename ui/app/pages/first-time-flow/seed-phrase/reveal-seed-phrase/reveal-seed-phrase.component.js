@@ -161,21 +161,19 @@ export default class RevealSeedPhrase extends PureComponent {
           </div>
         </div>
         <div className="reveal-seed-phrase__buttons">
-          <Button
-            type="secondary"
-            className="first-time-flow__button"
+          <button
+            className="tolar-button tolar-button--secondary"
             onClick={this.handleSkip}
           >
             { t('remindMeLater') }
-          </Button>
-          <Button
-            type="primary"
-            className="first-time-flow__button"
+          </button>
+          <button
+            className="tolar-button"
             onClick={this.handleNext}
             disabled={!isShowingSeedPhrase}
           >
             { t('next') }
-          </Button>
+          </button>
         </div>
         {
           onboardingInitiator ?
