@@ -55,13 +55,12 @@ export default class Welcome extends PureComponent {
             <div>{t("taquinDescription")}</div>
             <div>{t("happyToSeeYou")}</div>
           </div>
-          <Button
-            type="primary"
-            className="first-time-flow__button"
+          <button
+            className="tolar-button"
             onClick={this.handleContinue}
           >
             {t("getStarted")}
-          </Button>
+          </button>
         </div>
       </div>
     );

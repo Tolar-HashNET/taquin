@@ -5,7 +5,7 @@
   align-items: center;
   max-width: 442px;
   padding: 0 18px;
-  color: black;
+  color: $tolar-light;
 
   &__wrapper {
     display: flex;
@@ -25,6 +25,7 @@
 
   &__description {
     text-align: center;
+    margin-bottom: 44px;
 
     div {
       font-size: 16px;
@@ -33,11 +34,5 @@
     @media screen and (max-width: 575px) {
       font-size: 0.9rem;
     }
-  }
-
-  .first-time-flow__button {
-    width: 184px;
-    font-weight: 500;
-    margin-top: 44px;
   }
 }

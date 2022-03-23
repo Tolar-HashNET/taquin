@@ -193,7 +193,18 @@
 
 .reveal-seed {
   &__content {
-    padding: 20px;
+    padding: 20px 0;
+
+    .input-label {
+      color: $tolar-light;
+    }
+    .form-control {
+      border-radius: 0;
+      border-color: $tolar-action;
+
+      background: transparent;
+      color: $tolar-light;
+    }
   }
 
   &__label {

@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import ToggleButton from "../../../components/ui/toggle-button";
 import { REVEAL_SEED_ROUTE } from "../../../helpers/constants/routes";
-import Button from "../../../components/ui/button";
 
 export default class SecurityTab extends PureComponent {
   static contextTypes = {
@@ -32,9 +31,8 @@ export default class SecurityTab extends PureComponent {
         </div>
         <div className="settings-page__content-item">
           <div className="settings-page__content-item-col">
-            <Button
-              type="danger"
-              large
+            <button
+              className='tolar-button tolar-button--danger'
               onClick={(event) => {
                 event.preventDefault();
                 this.context.metricsEvent({
@@ -48,7 +46,7 @@ export default class SecurityTab extends PureComponent {
               }}
             >
               {t("revealSeedWords")}
-            </Button>
+            </button>
           </div>
         </div>
       </div>

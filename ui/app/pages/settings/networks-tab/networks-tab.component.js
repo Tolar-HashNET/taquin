@@ -82,8 +82,8 @@ export default class NetworksTab extends PureComponent {
           {this.context.t("networks")}
         </span>
         <div className="networks-tab__add-network-header-button-wrapper">
-          <Button
-            type="secondary"
+          <button
+            className="tolar-button"
             onClick={(event) => {
               event.preventDefault();
               setSelectedSettingsRpcUrl(null);
@@ -91,7 +91,7 @@ export default class NetworksTab extends PureComponent {
             }}
           >
             {this.context.t("addNetwork")}
-          </Button>
+          </button>
         </div>
       </div>
     );

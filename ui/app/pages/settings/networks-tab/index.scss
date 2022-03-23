@@ -77,6 +77,17 @@
   }
 
   &__network-form-row {
+
+    .MuiInputBase-root{
+      border-radius: 0;
+      border-width: 1px;
+      color: $tolar-light;
+    }
+
+    .MuiInputBase-root.Mui-disabled {
+        color: transparentize($tolar-light, .6);
+    }
+
     @media screen and (max-width: 575px) {
       display: flex;
       flex-direction: column;
@@ -84,9 +95,9 @@
     }
 
     &--warning {
-      background-color: #fefae8;
+      background-color: transparentize(#ffd33d, .8);
       border: 1px solid #ffd33d;
-      width: 93%;
+      width: 100%;
       border-radius: 5px;
       box-sizing: border-box;
       padding: 12px;
@@ -100,7 +111,7 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
-    color: #fff;
+    color: $tolar-light;
   }
 
   &__networks-list {
@@ -229,6 +240,7 @@
 .network-form {
   &__footer {
     display: flex;
+    gap: 12px;
     flex-flow: row nowrap;
     margin: 0.75rem 0;
 

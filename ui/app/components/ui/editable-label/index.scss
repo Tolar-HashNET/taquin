@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  color: $tolar-light;
 
   &__value {
     max-width: 250px;
@@ -30,6 +31,6 @@
 
   &__icon {
     cursor: pointer;
-    color: $dusty-gray;
+    color: $tolar-light;
   }
 }

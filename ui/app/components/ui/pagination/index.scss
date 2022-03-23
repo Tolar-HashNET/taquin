@@ -1,0 +1,30 @@
+.pagination {
+    margin: 16px 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.pagination__change {
+    padding: 0 16px;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    background: transparent;
+    border: none;
+    color: $tolar-action;
+}
+
+.pagination__change:disabled {
+    opacity: 0.3;
+}
+
+.pagination__page {
+    padding: 0 16px;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $tolar-light;
+}

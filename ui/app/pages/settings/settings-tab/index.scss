@@ -5,11 +5,14 @@
     color: $crimson;
   }
 
-  &__rpc-save-button {
-    align-self: flex-end;
-    padding: 5px;
-    cursor: pointer;
-    width: 25%;
+  &__lock-timer {
+    .MuiInputBase-root {
+      border-radius: 0;
+      border-width: 1px;
+    }
+    .MuiInput-input {
+      color: $tolar-light;
+    }
   }
 
   &__button--red {

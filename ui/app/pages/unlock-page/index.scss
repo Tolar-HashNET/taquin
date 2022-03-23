@@ -9,22 +9,18 @@
   color: $silver-chalice;
 
   &__container {
-    background: #1E202D;
+    background: $tolar-dark;
     display: flex;
     align-self: stretch;
     justify-content: center;
     flex: 1 0 auto;
   }
 
-  // &__mascot-container {
-  //   margin-top: 24px;
-  // }
-
   &__title {
     margin-top: 5px;
     font-size: 2rem;
     font-weight: 800;
-    color: #fff;
+    color: $tolar-light;
   }
 
   &__form {
@@ -46,6 +42,25 @@
 
     &--use-classic {
       margin-top: 10px;
+    }
+  }
+}
+
+.unlock-page__form {
+  .MuiFormControl-root .MuiInputBase-root {
+    &::before {
+      border-color: rgba(255,255,255,0.4);
+    }
+    
+    &:hover {
+      &::before {
+        border-color: rgba(19, 206, 239, 1);
+      }
+    }
+
+    .MuiInputBase-input {
+      padding: 8px 0;
+      color: #fff;
     }
   }
 }

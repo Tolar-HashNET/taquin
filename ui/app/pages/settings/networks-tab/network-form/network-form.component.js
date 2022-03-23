@@ -344,24 +344,27 @@ export default class NetworkForm extends PureComponent {
         )}
         <div className="network-form__footer">
           {deletable && (
-            <Button type="danger" onClick={this.onDelete}>
+            <button
+              className="tolar-button tolar-button--danger"
+              onClick={this.onDelete}
+            >
               {t("delete")}
-            </Button>
+            </button>
           )}
-          <Button
-            type="default"
+          <button
+            className="tolar-button tolar-button--secondary tolar-button--wide"
             onClick={this.onCancel}
             disabled={viewOnly || this.stateIsUnchanged()}
           >
             {t("cancel")}
-          </Button>
-          <Button
-            type="secondary"
+          </button>
+          <button
+            className="tolar-button tolar-button--wide"
             disabled={isSubmitDisabled}
             onClick={this.onSubmit}
           >
             {t("save")}
-          </Button>
+          </button>
         </div>
       </div>
     );

@@ -7,7 +7,7 @@
 
 .first-time-flow {
   width: 100%;
-  background-color: $white;
+  background-color: $tolar-dark;
   display: flex;
   justify-content: center;
 
@@ -32,24 +32,45 @@
   &__form {
     display: flex;
     flex-direction: column;
+
+    .MuiInputLabel-root, .Mui-focused {
+      font-family: 'Clash Grotesk';
+      color: $tolar-light !important;
+    }
+    .MuiInputBase-root {
+      font-family: 'Clash Grotesk';
+      border-radius: 0;
+      border-width: 1px;
+      color: $tolar-light;
+    }
+
+    .Mui-error {
+      font-family: 'Clash Grotesk';
+      color: #f44336 !important;
+    }
   }
 
   &__create-back {
+    color: $tolar-action;
     margin-bottom: 16px;
   }
 
   &__header {
     font-size: 2.5rem;
     margin-bottom: 24px;
-    color: black;
+    color: $tolar-light;
   }
 
   &__subheader {
     margin-bottom: 16px;
   }
 
-  &__input {
+  &__input, &__import-button {
     max-width: 350px;
+  }
+
+  &__import-button {
+    margin-top: 16px;
   }
 
   &__textarea-wrapper {
@@ -64,7 +85,7 @@
 
   &__textarea-label {
     margin-bottom: 9px;
-    color: #1b344d;
+    color: $tolar-light;
     font-size: 18px;
   }
 
@@ -72,9 +93,9 @@
     /*rtl:ignore*/
     direction: ltr;
     font-size: 1rem;
-    border: 1px solid #cdcdcd;
-    border-radius: 6px;
-    background-color: #fff;
+    // border: 1px solid #cdcdcd;
+    // border-radius: 6px;
+    // background-color: #fff;
     padding: 16px;
     margin-top: 8px;
   }
@@ -108,7 +129,7 @@
 
   &__text-block {
     margin-bottom: 24px;
-    color: black;
+    color: $tolar-light;
 
     @media screen and (max-width: $break-small) {
       margin-bottom: 16px;
@@ -116,10 +137,9 @@
     }
   }
 
-  &__button {
-    margin: 35px 0 14px;
-    width: 170px;
-    height: 44px;
+  &__new-password-button {
+    margin-top: 16px;
+    max-width: 350px;
   }
 
   &__checkbox-container {

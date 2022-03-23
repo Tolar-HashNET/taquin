@@ -7,12 +7,10 @@
     align-items: center;
     position: relative;
     padding: 5px 0 31px 0;
-    border: 1px solid $silver;
-    border-radius: 4px;
   }
 
   &__back {
-    color: $dusty-gray;
+    color: $tolar-light;
     position: absolute;
     top: 13px;
     left: 17px;
@@ -30,7 +28,7 @@
   &__close {
     font-size: 40px;
     background-color: transparent;
-    color: $dusty-gray;
+    color: $tolar-light;
     position: absolute;
     cursor: pointer;
     top: 10px;

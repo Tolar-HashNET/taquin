@@ -23,7 +23,7 @@
   }
 
   &__select-label {
-    color: $scorpion;
+    color: $tolar-light;
     font-size: 16px;
     line-height: 21px;
   }
@@ -31,9 +31,8 @@
   &__select {
     height: 54px;
     width: 210px;
-    border: 1px solid #d2d8dd;
-    border-radius: 4px;
-    background-color: #fff;
+    border: 1px solid $tolar-light;
+    background-color: transparent;
     display: flex;
     align-items: center;
 
@@ -42,6 +41,8 @@
       height: 100%;
       border: none;
       box-shadow: none;
+      background-color: transparent;
+      color: $tolar-light;
 
       .Select-value {
         display: flex;
@@ -69,18 +70,22 @@
     flex-flow: column;
     align-items: flex-start;
     margin-top: 34px;
+    color: $tolar-light;
   }
 
   &__input-password {
     height: 54px;
     width: 315px;
-    border: 1px solid $geyser;
-    border-radius: 4px;
-    background-color: $white;
+    border: 1px solid $tolar-light;
+    background-color: transparent;
     margin-top: 16px;
-    color: $scorpion;
+    color: $tolar-light;
     font-size: 16px;
     padding: 0 20px;
+
+    &:focus {
+      border-color: $tolar-action;
+    }
   }
 
   &__json {
@@ -96,6 +101,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    gap: 12px;
   }
   .import-key-indicator {
     width: 100%;

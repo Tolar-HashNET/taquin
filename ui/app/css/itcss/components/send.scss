@@ -556,7 +556,7 @@
   &__form-field-container {
     display: flex;
     flex-direction: column;
-    width: 277px;
+    width: 100%;
   }
 
   &__form-field {
@@ -584,7 +584,7 @@
   }
 
   &__form-label {
-    color: $scorpion;
+    color: transparentize($tolar-light, .2);
     font-size: 16px;
     line-height: 22px;
     width: 95px;
@@ -595,12 +595,9 @@
   &__from-dropdown,
   &__asset-dropdown {
     width: 100%;
-    border: 1px solid $alto;
-    border-radius: 4px;
-    background-color: $white;
     line-height: 16px;
     font-size: 12px;
-    color: $tundora;
+    color: $tolar-light;
     position: relative;
 
     &__close-area {
@@ -639,7 +636,8 @@
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      padding: 8px 8px;
+      padding: 0 8px;
+      height: 100%;
 
       &:hover {
         background-color: rgba($alto, 0.2);
@@ -712,8 +710,9 @@
     }
 
     &__input-wrapper {
-      border: 1px solid $alto;
-      border-radius: 4px;
+      border: 1px solid transparentize($tolar-light, .8);
+      // border: 1px solid $alto;
+      // border-radius: 4px;
       height: 100%;
 
       &--opened {
@@ -752,10 +751,10 @@
       position: relative;
       height: 54px;
       width: 100%;
-      border: 1px solid $alto;
-      border-radius: 4px;
-      background-color: $white;
-      color: $tundora;
+      border: 1px solid transparentize($tolar-light, .2);
+      // border-radius: 4px;
+      background-color: transparent;
+      color: $tolar-light;
       padding: 10px;
       font-size: 16px;
       line-height: 21px;

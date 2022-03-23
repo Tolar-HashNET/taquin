@@ -11,7 +11,7 @@
     width: 47.5%;
 
     &__label {
-      color: #313b5e;
+      color: transparentize($tolar-light, .2);;
       font-size: 12px;
       display: flex;
       justify-content: space-between;
@@ -48,15 +48,16 @@
     &__input {
       /*rtl:ignore*/
       direction: ltr;
-      border: 1px solid $dusty-gray;
-      border-radius: 4px;
-      color: $mid-gray;
+      border: 1px solid transparentize($tolar-light, .8);
+      // border-radius: 4px;
+      color: $tolar-light;
       font-size: 16px;
       height: 24px;
       width: 100%;
       padding-left: 8px;
       padding-top: 2px;
       margin-top: 7px;
+      background: transparent;
     }
 
     &__input--error {

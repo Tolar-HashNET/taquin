@@ -1,5 +1,5 @@
 .end-of-flow {
-  color: black;
+  color: $tolar-light;
   font-style: normal;
 
   .app-header__logo-container {
@@ -39,6 +39,7 @@
   }
 
   button {
+    margin-top: 24px;
     width: 207px;
   }
 

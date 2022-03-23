@@ -6,7 +6,7 @@
 
   &__main-view {
     flex: 1 1 66.5%;
-    background: #1E202D;
+    background: $tolar-dark;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
 
   &__main-view &__tab {
     flex-grow: 1;
-    color: #00BDDE;
+    color: $tolar-light;
     padding: 16px 8px;
     font-size: 14px;
     font-weight: 500;
@@ -36,7 +36,8 @@
   }
 
   &__main-view &__tab--active {
-    color: #fff;
+    color: $tolar-action;
+    border-bottom: 1px solid;
   }
 
   &__connect-status-text {

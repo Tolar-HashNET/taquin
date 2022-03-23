@@ -100,7 +100,7 @@
         display: flex;
         flex-flow: row nowrap;
         font-size: 1.125rem;
-        color: $Grey-800;
+        color: $tolar-light;
         word-break: break-word;
 
         &--address {
@@ -133,6 +133,13 @@
       .unit-input__input {
         max-width: 100%;
         width: 100%;
+      }
+
+      .MuiInputBase-root {
+        border-radius: 0;
+        border-width: 1px;
+        border-color: rgba(255, 255, 255, 0.4);
+        color: $tolar-light;
       }
     }
   }
@@ -233,7 +240,7 @@
     align-items: center;
     border-radius: 50%;
     border-width: 2px;
-    background: #00BDDE;
+    background: $tolar-action;
     margin-right: 5px;
     cursor: pointer;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
