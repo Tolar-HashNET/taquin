@@ -222,19 +222,19 @@ export default class ChooseAccount extends Component {
         <div className="permissions-connect-choose-account__footer-container">
           <PermissionsConnectFooter />
           <div className="permissions-connect-choose-account__bottom-buttons">
-            <Button
+            <button
+              className="tolar-button tolar-button--secondary"
               onClick={() => cancelPermissionsRequest(permissionsRequestId)}
-              type="default"
             >
               {t("cancel")}
-            </Button>
-            <Button
+            </button>
+            <button
+              className="tolar-button"
               onClick={() => selectAccounts(selectedAccounts)}
-              type="primary"
               disabled={selectedAccounts.size === 0}
             >
               {t("next")}
-            </Button>
+            </button>
           </div>
         </div>
       </div>

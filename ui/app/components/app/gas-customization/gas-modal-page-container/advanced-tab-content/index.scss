@@ -63,7 +63,7 @@
     height: 265px;
     background: #f8f9fb;
     border-bottom: 1px solid #d2d8dd;
-    border-top: 1px solid #d2d8dd;
+    border-top: 1px solid transparentize($tolar-light, .8);
     position: relative;
 
     &__title {

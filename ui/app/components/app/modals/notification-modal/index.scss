@@ -10,7 +10,7 @@
   }
 
   &__header {
-    background: $wild-sand;
+    background: $tolar-dark;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -41,7 +41,7 @@
   }
 
   &__link {
-    color: $primary-blue;
+    color: $tolar-action;
   }
 
   .modal-close-x::after {

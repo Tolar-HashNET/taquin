@@ -34,7 +34,7 @@
   }
 
   &__text-blue {
-    color: $primary-blue;
+    color: $tolar-action;
     cursor: pointer;
   }
 
@@ -46,9 +46,8 @@
     flex: 2 1 0;
     width: 92%;
     max-height: max-content;
-    border: 1px solid #d0d5da;
+    border: 1px solid transparentize($tolar-light, .8);
     box-sizing: border-box;
-    border-radius: 8px;
     margin-top: 8px;
     overflow-y: auto;
   }
@@ -100,7 +99,7 @@
     display: flex;
     align-items: center;
     padding: 16px;
-    border-bottom: 1px solid #d2d8dd;
+    border: 1px solid transparentize($tolar-light, .8);
     justify-content: space-between;
 
     &:last-of-type {
@@ -108,7 +107,8 @@
     }
 
     &:hover {
-      background: $Grey-000;
+      background: transparentize($tolar-light, .8);
+      color: $tolar-dark;
       cursor: pointer;
     }
 
@@ -122,7 +122,7 @@
     &__label {
       @include H6;
 
-      color: $Black-100;
+      color: $tolar-light;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
@@ -131,7 +131,7 @@
     &__balance {
       @include H7;
 
-      color: $Grey-500;
+      color: transparentize($tolar-light, .8);
     }
 
     &__last-connected {
@@ -140,7 +140,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      color: $primary-blue;
+      color: $tolar-action;
     }
   }
 
@@ -166,10 +166,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 16px 24px;
     margin-top: 8px;
-    border-top: 1px solid #d6d9dc;
+    border-top: 1px solid transparentize($tolar-light, .8);
 
     @media screen and (min-width: 576px) {
       border-top: none;
@@ -177,15 +176,6 @@
 
     button {
       width: 124px;
-    }
-
-    .btn-default {
-      background: white;
-      margin-left: 16px;
-    }
-
-    .btn-primary {
-      margin-right: 16px;
     }
   }
 }
