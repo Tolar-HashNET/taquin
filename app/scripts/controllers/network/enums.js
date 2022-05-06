@@ -3,9 +3,11 @@
 // export const KOVAN = 'kovan'
 // export const MAINNET = 'mainnet'
 // export const GOERLI = 'goerli'
+export const OLD_MAINNET = "old-mainnet";
+export const OLD_TESTNET = "old-testnet";
 export const MAINNET = "mainnet";
 export const TESTNET = "testnet";
-export const STAGINGGCP = "staging-gcp";
+export const STAGING = "staging";
 export const LOCALHOST = "localhost";
 
 // export const MAINNET_NETWORK_ID = '1'
@@ -13,13 +15,17 @@ export const LOCALHOST = "localhost";
 // export const RINKEBY_NETWORK_ID = '4'
 // export const GOERLI_NETWORK_ID = '5'
 // export const KOVAN_NETWORK_ID = '42'
+export const OLD_MAINNET_NETWORK_ID = "10001";
+export const OLD_TESTNET_NETWORK_ID = "10002";
 export const MAINNET_NETWORK_ID = "1";
-export const TESTNET_NETWORK_ID = "3";
-export const STAGINGGCP_NETWORK_ID = "4";
+export const TESTNET_NETWORK_ID = "100"; // TODO: should be 2 once deployed with latest config
+export const STAGING_NETWORK_ID = "3";
 
-export const MAINNET_SUBDOMAIN = "gateway.dev";
-export const TESTNET_SUBDOMAIN = "testnet-gateway.dev";
-export const STAGING_GCP_SUBDOMAIN = "jsongw.stagenet";
+export const OLD_MAINNET_SUBDOMAIN = "gateway.dev";
+export const OLD_TESTNET_SUBDOMAIN = "testnet-gateway.dev";
+export const MAINNET_SUBDOMAIN = "jsongw.mainnet";
+export const TESTNET_SUBDOMAIN = "jsongw.testnet";
+export const STAGING_SUBDOMAIN = "jsongw.stagenet";
 
 // export const MAINNET_CHAIN_ID = '0x1'
 // export const ROPSTEN_CHAIN_ID = '0x3'
@@ -33,11 +39,13 @@ export const STAGING_GCP_SUBDOMAIN = "jsongw.stagenet";
 // export const MAINNET_DISPLAY_NAME = 'Main Ethereum Network'
 // export const GOERLI_DISPLAY_NAME = 'Goerli'
 
+export const OLD_MAINNET_DISPLAY_NAME = "Legacy Main Tolar Network";
+export const OLD_TESTNET_DISPLAY_NAME = "Legacy Test Tolar Network";
 export const MAINNET_DISPLAY_NAME = "Main Tolar Network";
 export const TESTNET_DISPLAY_NAME = "Test Tolar Network";
-export const STAGING_GCP_DISPLAY_NAME = "Staging GCP Tolar Network";
+export const STAGING_DISPLAY_NAME = "Staging Tolar Network";
 
-export const TOLAR_PROVIDER_TYPES = [MAINNET, TESTNET, STAGINGGCP];
+export const TOLAR_PROVIDER_TYPES = [OLD_MAINNET, OLD_TESTNET, MAINNET, TESTNET, STAGING];
 
 // export const INFURA_PROVIDER_TYPES = [
 //   ROPSTEN,
@@ -56,15 +64,19 @@ export const TOLAR_PROVIDER_TYPES = [MAINNET, TESTNET, STAGINGGCP];
 // }
 
 export const NETWORK_TYPE_TO_ID_MAP = {
+  [OLD_MAINNET]: { networkId: OLD_MAINNET_NETWORK_ID },
+  [OLD_TESTNET]: { networkId: OLD_TESTNET_NETWORK_ID },
   [MAINNET]: { networkId: MAINNET_NETWORK_ID },
   [TESTNET]: { networkId: TESTNET_NETWORK_ID },
-  [STAGINGGCP]: { networkId: STAGINGGCP_NETWORK_ID },
+  [STAGING]: { networkId: STAGING_NETWORK_ID },
 };
 
 export const NETWORK_TYPE_TO_SUBDOMAIN_MAP = {
-  [MAINNET]: { subdomain: MAINNET_SUBDOMAIN },
+  [OLD_TESTNET]: { subdomain: OLD_TESTNET_SUBDOMAIN },
+  [OLD_MAINNET]: { subdomain: OLD_MAINNET_SUBDOMAIN },
   [TESTNET]: { subdomain: TESTNET_SUBDOMAIN },
-  [STAGINGGCP]: { subdomain: STAGING_GCP_SUBDOMAIN },
+  [MAINNET]: { subdomain: MAINNET_SUBDOMAIN },
+  [STAGING]: { subdomain: STAGING_SUBDOMAIN },
 };
 
 // export const NETWORK_TO_NAME_MAP = {
@@ -88,7 +100,9 @@ export const NETWORK_TYPE_TO_SUBDOMAIN_MAP = {
 // }
 
 export const NETWORK_TO_NAME_MAP = {
+  [OLD_MAINNET]: OLD_MAINNET_DISPLAY_NAME,
+  [OLD_TESTNET]: OLD_TESTNET_DISPLAY_NAME,
   [MAINNET]: MAINNET_DISPLAY_NAME,
   [TESTNET]: TESTNET_DISPLAY_NAME,
-  [STAGINGGCP]: STAGING_GCP_DISPLAY_NAME,
+  [STAGING]: STAGING_DISPLAY_NAME,
 };

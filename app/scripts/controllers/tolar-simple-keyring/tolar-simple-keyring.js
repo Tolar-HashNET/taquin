@@ -8,9 +8,11 @@ const SimpleKeyring = require("eth-simple-keyring");
 import Web3 from "@dreamfactoryhr/web3t";
 
 import {
+  OLD_MAINNET,
+  OLD_TESTNET,
   MAINNET,
   TESTNET,
-  STAGINGGCP,
+  STAGING,
   NETWORK_TYPE_TO_SUBDOMAIN_MAP,
 } from "../network/enums";
 

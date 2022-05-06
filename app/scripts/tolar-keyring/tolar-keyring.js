@@ -13,9 +13,11 @@ const type = "Tolar Keyring";
 const hdPathString = `m/44'/60'/0'/0`;
 
 import {
+  OLD_MAINNET,
+  OLD_TESTNET,
   MAINNET,
   TESTNET,
-  STAGINGGCP,
+  STAGING,
   NETWORK_TYPE_TO_SUBDOMAIN_MAP,
 } from "../controllers/network/enums";
 

@@ -194,9 +194,11 @@ export default class ExtensionPlatform {
     // const nonce = parseInt(txMeta.txParams.nonce, 16)
     // TODO changing urls
     const networkIdToTypeMap = {
-      mainnet: "explorer",
-      testnet: "testnet-explorer",
-      'staging-gcp': "web-explorer.stagenet",
+      'old-mainnet': "explorer",
+      'old-testnet': "testnet-explorer",
+      mainnet: "web-explorer.mainnet",
+      testnet: "web-explorer.testnet",
+      staging: "web-explorer.stagenet",
     };
 
     const netId = txMeta.taquinNetworkId;

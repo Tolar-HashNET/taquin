@@ -8,11 +8,15 @@ import * as networkEnums from "../../app/scripts/controllers/network/enums";
  */
 export function getEtherscanNetworkPrefix(networkId) {
   switch (networkId) {
-    case networkEnums.TESTNET_NETWORK_ID:
+    case networkEnums.OLD_TESTNET_NETWORK_ID:
       return "gateway.dev.";
-    case networkEnums.MAINNET_NETWORK_ID:
+    case networkEnums.OLD_MAINNET_NETWORK_ID:
       return "testnet-gateway.dev.";
-    case networkEnums.STAGINGGCP_NETWORK_ID:
+    case networkEnums.MAINNET_NETWORK_ID:
+      return "jsongw.mainnet.";
+    case networkEnums.TESTNET_NETWORK_ID:
+      return "jsongw.testnet.";
+    case networkEnums.STAGING_NETWORK_ID:
       return "jsongw.stagenet.";
     // case networkEnums.KOVAN_NETWORK_ID:
     //   return 'kovan.'

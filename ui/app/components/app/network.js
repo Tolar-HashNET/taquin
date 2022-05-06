@@ -14,7 +14,7 @@ function NetworkIndicator({
     <div
       className={classnames("network-component pointer", {
         "network-component--disabled": disabled,
-        "ethereum-network": providerName === "mainnet",
+        "ethereum-network": providerName === "old-mainnet",
         "kovan-test-network": providerName === "testnet",
       })}
       title={hoverText}
@@ -69,11 +69,11 @@ export default class Network extends Component {
     }
 
     switch (providerName) {
-      case "mainnet":
+      case "old-mainnet":
         return (
           <NetworkIndicator
             disabled={disabled}
-            hoverText={"Main Net" || t("mainnet")}
+            hoverText={"Legacy Main Net" || t("old-mainnet")}
             onClick={onClick}
             providerName={providerName}
           >
@@ -82,15 +82,15 @@ export default class Network extends Component {
               nonSelectBackgroundColor="#15afb2"
               loading={networkNumber === "loading"}
             />
-            <div className="network-name">{"Main Net"}</div>
+            <div className="network-name">{"Legacy Main Net"}</div>
           </NetworkIndicator>
         );
 
-      case "testnet":
+      case "old-testnet":
         return (
           <NetworkIndicator
             disabled={disabled}
-            hoverText={"Test Net" || t("testnet")}
+            hoverText={"Legacy Test Net" || t("old-testnet")}
             onClick={onClick}
             providerName={providerName}
           >
@@ -99,15 +99,15 @@ export default class Network extends Component {
               nonSelectBackgroundColor="#b039f3"
               loading={networkNumber === "loading"}
             />
-            <div className="network-name">{"Test Net" || t("testnet")}</div>
+            <div className="network-name">{"Legacy Test Net" || t("old-testnet")}</div>
           </NetworkIndicator>
         );
 
-        case "staging-gcp":
+        case "mainnet":
             return (
               <NetworkIndicator
                 disabled={disabled}
-                hoverText={"Staging GCP" || t("staging-gcp")}
+                hoverText={"Mainnet" || t("mainnet")}
                 onClick={onClick}
                 providerName={providerName}
               >
@@ -116,9 +116,43 @@ export default class Network extends Component {
                   nonSelectBackgroundColor="#ff1100"
                   loading={networkNumber === "loading"}
                 />
-                <div className="network-name">{"Staging GCP" || t("staging-gcp")}</div>
+                <div className="network-name">{"Mainnet" || t("mainnet")}</div>
               </NetworkIndicator>
             );
+
+            case "testnet":
+              return (
+                <NetworkIndicator
+                  disabled={disabled}
+                  hoverText={"Testnet" || t("testnet")}
+                  onClick={onClick}
+                  providerName={providerName}
+                >
+                  <NetworkDropdownIcon
+                    backgroundColor="#42f593"
+                    nonSelectBackgroundColor="#ff1100"
+                    loading={networkNumber === "loading"}
+                  />
+                  <div className="network-name">{"Testnet" || t("testnet")}</div>
+                </NetworkIndicator>
+              );
+
+              case "staging":
+                return (
+                  <NetworkIndicator
+                    disabled={disabled}
+                    hoverText={"Staging" || t("staging")}
+                    onClick={onClick}
+                    providerName={providerName}
+                  >
+                    <NetworkDropdownIcon
+                      backgroundColor="#79d351"
+                      nonSelectBackgroundColor="#ff1100"
+                      loading={networkNumber === "loading"}
+                    />
+                    <div className="network-name">{"Staging" || t("staging")}</div>
+                  </NetworkIndicator>
+                );
 
       default:
         return (
