@@ -6,9 +6,11 @@ import { bnToHex } from "../lib/util";
 import fetchWithTimeout from "../lib/fetch-with-timeout";
 
 import {
+  OLD_MAINNET,
+  OLD_TESTNET,
   MAINNET,
   TESTNET,
-  STAGINGGCP,
+  STAGING,
   NETWORK_TYPE_TO_SUBDOMAIN_MAP,
 } from "./network/enums";
 const fetch = fetchWithTimeout({
@@ -52,9 +54,11 @@ export default class IncomingTransactionsController {
         // [RINKEBY]: null,
         // [KOVAN]: null,
         // [GOERLI]: null,
+        [OLD_MAINNET]: null,
+        [OLD_TESTNET]: null,
         [MAINNET]: null,
         [TESTNET]: null,
-        [STAGINGGCP]: null,
+        [STAGING]: null,
       },
       ...opts.initState,
     };

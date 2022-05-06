@@ -25,7 +25,7 @@ import createLocalhostClient from "./createLocalhostClient";
 // } from './enums'
 
 import {
-  MAINNET,
+  OLD_MAINNET,
   LOCALHOST,
   TOLAR_PROVIDER_TYPES,
   NETWORK_TYPE_TO_SUBDOMAIN_MAP,
@@ -40,12 +40,12 @@ const { TAQUIN_DEBUG } = process.env;
 let defaultProviderConfigType;
 if (process.env.IN_TEST === "true") {
   // defaultProviderConfigType = LOCALHOST
-  defaultProviderConfigType = MAINNET;
+  defaultProviderConfigType = OLD_MAINNET;
 } else if (TAQUIN_DEBUG || env === "test") {
   // defaultProviderConfigType = RINKEBY
-  defaultProviderConfigType = MAINNET;
+  defaultProviderConfigType = OLD_MAINNET;
 } else {
-  defaultProviderConfigType = MAINNET;
+  defaultProviderConfigType = OLD_MAINNET;
 }
 
 const defaultProviderConfig = {
@@ -257,7 +257,7 @@ export default class NetworkController extends EventEmitter {
 
   _configureTolarProvider({ type }) {
     log.info("NetworkController - configureTolarProvider", type);
-    const rpcTarget = `${NETWORK_TYPE_TO_SUBDOMAIN_MAP[MAINNET]?.subdomain}.tolar.io`;
+    const rpcTarget = `${NETWORK_TYPE_TO_SUBDOMAIN_MAP[OLD_MAINNET]?.subdomain}.tolar.io`;
     const networkClient = this._configureStandardProvider({
       rpcUrl: rpcTarget,
       chainId,

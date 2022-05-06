@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import {
+  OLD_MAINNET_NETWORK_ID,
+  OLD_TESTNET_NETWORK_ID,
   MAINNET_NETWORK_ID,
   TESTNET_NETWORK_ID,
-  STAGINGGCP,
-  STAGINGGCP_NETWORK_ID,
+  STAGING_NETWORK_ID,
 } from "../../../../../app/scripts/controllers/network/enums";
 
 const networkIdToTypeMap = {
+  [OLD_MAINNET_NETWORK_ID]: "old-mainnet",
+  [OLD_TESTNET_NETWORK_ID]: "old-testnet",
   [MAINNET_NETWORK_ID]: "mainnet",
   [TESTNET_NETWORK_ID]: "testnet",
-  [STAGINGGCP_NETWORK_ID]: "staging-gcp",
+  [STAGING_NETWORK_ID]: "staging",
 };
 
 export default class NetworkDisplay extends Component {
