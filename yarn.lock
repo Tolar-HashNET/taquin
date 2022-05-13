@@ -1119,20 +1119,6 @@
   resolved "https://registry.yarnpkg.com/@download/blockies/-/blockies-1.0.3.tgz#9aea770f9de72f3f947f1b3a53ee1e92f8dc4a68"
   integrity sha512-iGDh2M6pFuXg9kyW+U//963LKylSLFpLG5hZvUppCjhkiDwsYquQPyamxCQlLASYySS3gGKAki2eWG9qIHKCew==
 
-"@dreamfactoryhr/web3t@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@dreamfactoryhr/web3t/-/web3t-1.0.2.tgz#71fecd8b6583205b2b26b1d5ff5db6c5abd0577d"
-  integrity sha512-wJjSzsQf6ppIorQb2xiGc1P1P5FaRFHw3ARJPamoFQqhfw1Y+VhoW4GEwrzbfbGP94mlFDAZelElLsxgBkkxPQ==
-  dependencies:
-    web3-bzz "1.2.6"
-    web3-core "1.2.6"
-    web3-eth "1.2.6"
-    web3-eth-personal "1.2.6"
-    web3-net "1.2.6"
-    web3-shh "1.2.6"
-    web3-tolar "1.0.5"
-    web3-utils "1.2.6"
-
 "@electron/get@^1.0.1":
   version "1.12.2"
   resolved "https://registry.yarnpkg.com/@electron/get/-/get-1.12.2.tgz#6442066afb99be08cefb9a281e4b4692b33764f3"
@@ -2692,6 +2678,30 @@
   dependencies:
     "@babel/runtime" "^7.10.3"
     "@testing-library/dom" "^7.17.1"
+
+"@tolar/web3-tolar@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@tolar/web3-tolar/-/web3-tolar-1.0.7.tgz#29b9e6576303748b817a6379e60226f727c0c5bc"
+  integrity sha512-/NqfJTgfVJ7rQl3LtOOr4YF0Ogg2nG+mAmHHTw6TFBMjkkN9gP+37b5oyKWIwbkIcvNWJlV6mxfg3Bdas/Y5CQ==
+  dependencies:
+    underscore "^1.10.2"
+    web3-core-method "^1.2.9"
+    web3-net "^1.2.9"
+    web3-tolar-accounts "^1.2.6-1"
+
+"@tolar/web3@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@tolar/web3/-/web3-1.0.4.tgz#ed83e06ad98b0a4f531f321493cde315500995a7"
+  integrity sha512-pqz0RaFgEsxF02Ko98Tp3hKg5RJKq2DhwNLuWeudT7A+1rq50GlBpSHHNUZfPQcbqj/tLrKPgEQnB2+j9Ydv2g==
+  dependencies:
+    "@tolar/web3-tolar" "1.0.7"
+    web3-bzz "1.2.6"
+    web3-core "1.2.6"
+    web3-eth "1.2.6"
+    web3-eth-personal "1.2.6"
+    web3-net "1.2.6"
+    web3-shh "1.2.6"
+    web3-utils "1.2.6"
 
 "@types/aria-query@^4.2.0":
   version "4.2.0"
@@ -28645,16 +28655,6 @@ web3-tolar-accounts@^1.2.6-1:
     web3-core-helpers "1.2.6"
     web3-core-method "1.2.6"
     web3-utils "1.2.6"
-
-web3-tolar@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/web3-tolar/-/web3-tolar-1.0.5.tgz#686c923ee436bfa4860a80d4a7e65700eeef3063"
-  integrity sha512-apJiZGztNpXO6ppPqKv0uMUvfVH7ShhwULUuqu1VoKf9opC8PDnx/XvVDQUTjs6fRG5b2l/8/KcrvbyHU4cRlg==
-  dependencies:
-    underscore "^1.10.2"
-    web3-core-method "^1.2.9"
-    web3-net "^1.2.9"
-    web3-tolar-accounts "^1.2.6-1"
 
 web3-utils@1.2.4:
   version "1.2.4"

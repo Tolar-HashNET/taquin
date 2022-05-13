@@ -1,5 +1,5 @@
 //import Web3 from 'web3'
-//  import Web3 from '@dreamfactoryhr/web3t'
+//  import Web3 from '@tolar/web3'
 import contracts from "eth-contract-metadata";
 import { warn } from "loglevel";
 import SINGLE_CALL_BALANCES_ABI from "single-call-balance-checker-abi";
