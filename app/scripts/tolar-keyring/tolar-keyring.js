@@ -1,4 +1,4 @@
-import Web3 from "@dreamfactoryhr/web3t";
+import Web3 from "@tolar/web3";
 
 const HdKeyring = require("eth-hd-keyring");
 var utils = require("web3-utils");
@@ -19,6 +19,7 @@ import {
   TESTNET,
   STAGING,
   NETWORK_TYPE_TO_SUBDOMAIN_MAP,
+  NETWORK_TYPE_TO_ID_MAP,
 } from "../controllers/network/enums";
 
 export default class TolarKeyring extends HdKeyring {
@@ -38,6 +39,7 @@ export default class TolarKeyring extends HdKeyring {
     const isTolar = Boolean(NETWORK_TYPE_TO_SUBDOMAIN_MAP[netConfig.network]);
     if (isTolar) {
       const tolarRpc = `https://${NETWORK_TYPE_TO_SUBDOMAIN_MAP[netConfig.network].subdomain}.tolar.io`;
+      this.netConfig = netConfig;
       this.web3 = new Web3(tolarRpc);
     } else {
       alert("Unsupported tolar RPC provided");
@@ -96,11 +98,20 @@ export default class TolarKeyring extends HdKeyring {
 
   // tx is an instance of the ethereumjs-transaction class.
 
+  supportsChainId() {
+    return this.netConfig.network != OLD_MAINNET && this.netConfig.network != OLD_TESTNET;
+  }
+
   async signTransaction(address, tx, opts = {}) {
     const wallet = this._getWalletForAccount(address, opts);
     const nonce = await this.web3.tolar.getNonce(address);
+
+    const objToSign = this.supportsChainId() ? 
+      { ...tx, nonce: nonce, network_id: NETWORK_TYPE_TO_ID_MAP[this.netConfig.network].networkId } :
+      { ...tx, nonce: nonce }
+
     const signedTx = await this.web3.tolar.accounts.signTransaction(
-      { ...tx, nonce: nonce },
+      objToSign,
       wallet.getPrivateKeyString()
     );
 

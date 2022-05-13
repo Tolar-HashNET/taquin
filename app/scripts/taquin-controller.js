@@ -66,7 +66,7 @@ import TolarKeyring from "./tolar-keyring/tolar-keyring";
 import { TolarKeyringController } from "./controllers/tolar-keyring/tolar-keyring-controller";
 import { TolarAddressBookController } from "./controllers/tolar-address-book/TolarAddressBookController";
 
-import Web3 from "@dreamfactoryhr/web3t";
+import Web3 from "@tolar/web3";
 
 export default class TaquinController extends EventEmitter {
   /**

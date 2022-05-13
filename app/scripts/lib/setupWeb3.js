@@ -4,7 +4,7 @@
 // Delete this file
 
 // import "web3/dist/web3.min";
-import Web3 from "@dreamfactoryhr/web3t/dist/web3.min";
+import Web3 from "@tolar/web3/dist/web3.min";
 
 const shouldLogUsage = ![
   "docs.taquin.io",

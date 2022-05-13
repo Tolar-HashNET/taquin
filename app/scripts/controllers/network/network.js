@@ -29,6 +29,7 @@ import {
   LOCALHOST,
   TOLAR_PROVIDER_TYPES,
   NETWORK_TYPE_TO_SUBDOMAIN_MAP,
+  NETWORK_TYPE_TO_ID_MAP,
 } from "./enums";
 import TolarBlockTracker from "../../lib/tolar-block-tracker/tolar-block-tracker";
 
