@@ -14,7 +14,7 @@ function NetworkIndicator({
     <div
       className={classnames("network-component pointer", {
         "network-component--disabled": disabled,
-        "ethereum-network": providerName === "old-mainnet",
+        "ethereum-network": providerName === "mainnet",
         "kovan-test-network": providerName === "testnet",
       })}
       title={hoverText}
@@ -69,40 +69,6 @@ export default class Network extends Component {
     }
 
     switch (providerName) {
-      case "old-mainnet":
-        return (
-          <NetworkIndicator
-            disabled={disabled}
-            hoverText={"Legacy Main Net" || t("old-mainnet")}
-            onClick={onClick}
-            providerName={providerName}
-          >
-            <NetworkDropdownIcon
-              backgroundColor="#038789"
-              nonSelectBackgroundColor="#15afb2"
-              loading={networkNumber === "loading"}
-            />
-            <div className="network-name">{"Legacy Main Net"}</div>
-          </NetworkIndicator>
-        );
-
-      case "old-testnet":
-        return (
-          <NetworkIndicator
-            disabled={disabled}
-            hoverText={"Legacy Test Net" || t("old-testnet")}
-            onClick={onClick}
-            providerName={providerName}
-          >
-            <NetworkDropdownIcon
-              backgroundColor="#690496"
-              nonSelectBackgroundColor="#b039f3"
-              loading={networkNumber === "loading"}
-            />
-            <div className="network-name">{"Legacy Test Net" || t("old-testnet")}</div>
-          </NetworkIndicator>
-        );
-
         case "mainnet":
             return (
               <NetworkIndicator
@@ -129,7 +95,7 @@ export default class Network extends Component {
                   providerName={providerName}
                 >
                   <NetworkDropdownIcon
-                    backgroundColor="#42f593"
+                    backgroundColor="#79d351"
                     nonSelectBackgroundColor="#ff1100"
                     loading={networkNumber === "loading"}
                   />

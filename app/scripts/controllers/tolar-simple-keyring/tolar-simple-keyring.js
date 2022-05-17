@@ -8,8 +8,6 @@ const SimpleKeyring = require("eth-simple-keyring");
 import Web3 from "@tolar/web3";
 
 import {
-  OLD_MAINNET,
-  OLD_TESTNET,
   MAINNET,
   TESTNET,
   STAGING,
@@ -90,20 +88,12 @@ export class TolarSimpleKeyring extends SimpleKeyring {
     });
   }
 
-  supportsChainId() {
-    return this.netConfig.network != OLD_MAINNET && this.netConfig.network != OLD_TESTNET;
-  }
-
   async signTransaction(address, tx, opts = {}) {
     const wallet = this._getWalletForAccount(address, opts);
     const nonce = await this.web3.tolar.getNonce(address);
 
-    const objToSign = this.supportsChainId() ? 
-    { ...tx, nonce: nonce, network_id: NETWORK_TYPE_TO_ID_MAP[this.netConfig.network].networkId } :
-    { ...tx, nonce: nonce }
-    
     const signedTx = await this.web3.tolar.accounts.signTransaction(
-      objToSign,
+      { ...tx, nonce: nonce, network_id: NETWORK_TYPE_TO_ID_MAP[this.netConfig.network].networkId },
       wallet.getPrivateKeyString()
     );
 

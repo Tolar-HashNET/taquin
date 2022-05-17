@@ -194,8 +194,6 @@ export default class ExtensionPlatform {
     // const nonce = parseInt(txMeta.txParams.nonce, 16)
     // TODO changing urls
     const networkIdToTypeMap = {
-      'old-mainnet': "explorer",
-      'old-testnet': "testnet-explorer",
       mainnet: "web-explorer.mainnet",
       testnet: "web-explorer.testnet",
       staging: "web-explorer.stagenet",

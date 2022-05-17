@@ -6,8 +6,6 @@ import { bnToHex } from "../lib/util";
 import fetchWithTimeout from "../lib/fetch-with-timeout";
 
 import {
-  OLD_MAINNET,
-  OLD_TESTNET,
   MAINNET,
   TESTNET,
   STAGING,
@@ -54,8 +52,6 @@ export default class IncomingTransactionsController {
         // [RINKEBY]: null,
         // [KOVAN]: null,
         // [GOERLI]: null,
-        [OLD_MAINNET]: null,
-        [OLD_TESTNET]: null,
         [MAINNET]: null,
         [TESTNET]: null,
         [STAGING]: null,
