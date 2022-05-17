@@ -13,7 +13,7 @@ const defaultNetworksData = [
     iconColor: "#42f593",
     providerType: "testnet",
     rpcUrl: "https://jsongw.testnet.tolar.io",
-    chainId: '100', // TODO: change to 2 later
+    chainId: '2',
     ticker: "TOL",
     blockExplorerUrl: "https://web-explorer.testnet.tolar.io",
   },
