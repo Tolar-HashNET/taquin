@@ -1,14 +1,5 @@
 const defaultNetworksData = [
   {
-    labelKey: "old-mainnet",
-    iconColor: "#29B6AF",
-    providerType: "old-mainnet",
-    rpcUrl: "https://gateway.dev.tolar.io",
-    chainId: '10001',
-    ticker: "TOL",
-    blockExplorerUrl: "https://explorer.tolar.io",
-  },
-  {
     labelKey: "testnet",
     iconColor: "#42f593",
     providerType: "testnet",
@@ -25,15 +16,6 @@ const defaultNetworksData = [
     chainId: '1',
     ticker: "TOL",
     blockExplorerUrl: "https://web-explorer.mainnet.tolar.io",
-  },
-  {
-    labelKey: "old-testnet",
-    iconColor: "#F6C343",
-    providerType: "old-testnet",
-    rpcUrl: "https://testnet-gateway.dev.tolar.io",
-    chainId: '10002',
-    ticker: "TOL",
-    blockExplorerUrl: "https://testnet-explorer.tolar.io",
   },
   {
     labelKey: "staging",

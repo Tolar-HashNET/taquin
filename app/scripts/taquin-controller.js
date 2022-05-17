@@ -862,7 +862,7 @@ export default class TaquinController extends EventEmitter {
       filteredAccountTokens[checksummedAddress] = {};
       Object.keys(accountTokens[address]).forEach((networkType) => {
         filteredAccountTokens[checksummedAddress][networkType] =
-          networkType === "old-mainnet"
+          networkType === "mainnet"
             ? accountTokens[address][networkType].filter(
                 ({ address: tokenAddress }) => {
                   const checksumAddress =

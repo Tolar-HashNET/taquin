@@ -188,11 +188,7 @@ class NetworkDropdown extends Component {
 
     let name;
 
-    if (providerName === "old-mainnet") {
-      name = "Legacy Main Net";
-    } else if (providerName === "old-testnet") {
-      name = "Legacy Test Net";
-    } else if (providerName === "testnet") {
+    if (providerName === "testnet") {
       name = "Testnet";
     } else if (providerName === "mainnet") {
       name = "Mainnet";
@@ -326,56 +322,6 @@ class NetworkDropdown extends Component {
             }}
           >
             {"Staging"}
-          </span>
-        </DropdownMenuItem>
-
-        <DropdownMenuItem
-          key="old-mainnet"
-          closeMenu={() => this.props.hideNetworkDropdown()}
-          onClick={() => this.handleClick("old-mainnet")}
-          style={{ ...dropdownMenuItemStyle, borderColor: "#038789" }}
-        >
-          {providerType === "old-mainnet" ? (
-            <i className="fa fa-check" />
-          ) : (
-            <div className="network-check__transparent">✓</div>
-          )}
-          <NetworkDropdownIcon
-            backgroundColor="#29B6AF"
-            isSelected={providerType === "old-mainnet"}
-          />
-          <span
-            className="network-name-item"
-            style={{
-              color: providerType === "old-mainnet" ? "#ffffff" : "#9b9b9b",
-            }}
-          >
-            {"Legacy Main Net"}
-          </span>
-        </DropdownMenuItem>
-
-        <DropdownMenuItem
-          key="old-testnet"
-          closeMenu={() => this.props.hideNetworkDropdown()}
-          onClick={() => this.handleClick("old-testnet")}
-          style={dropdownMenuItemStyle}
-        >
-          {providerType === "old-testnet" ? (
-            <i className="fa fa-check" />
-          ) : (
-            <div className="network-check__transparent">✓</div>
-          )}
-          <NetworkDropdownIcon
-            backgroundColor="#7057ff"
-            isSelected={providerType === "old-testnet"}
-          />
-          <span
-            className="network-name-item"
-            style={{
-              color: providerType === "old-testnet" ? "#ffffff" : "#9b9b9b",
-            }}
-          >
-            {"Legacy Test Net"}
           </span>
         </DropdownMenuItem>
 
