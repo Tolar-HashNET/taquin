@@ -18,7 +18,7 @@ export const LOCALHOST = "localhost";
 export const OLD_MAINNET_NETWORK_ID = "10001";
 export const OLD_TESTNET_NETWORK_ID = "10002";
 export const MAINNET_NETWORK_ID = "1";
-export const TESTNET_NETWORK_ID = "100"; // TODO: should be 2 once deployed with latest config
+export const TESTNET_NETWORK_ID = "2";
 export const STAGING_NETWORK_ID = "3";
 
 export const OLD_MAINNET_SUBDOMAIN = "gateway.dev";
