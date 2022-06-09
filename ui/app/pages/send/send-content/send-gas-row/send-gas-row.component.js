@@ -87,6 +87,7 @@ export default class SendGasRow extends Component {
       gasLimit,
       insufficientBalance,
     } = this.props;
+    
     const { metricsEvent } = this.context;
     const isMainnet = false;
     const gasPriceButtonGroup = (

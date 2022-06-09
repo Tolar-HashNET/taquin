@@ -31,7 +31,7 @@ export function getGasLimit(state) {
 export function getGasPrice(state) {
   return (
     state.taquin.send.tx.gas_price ||
-    1 ||
+    1000000000000 ||
     getAveragePriceEstimateInHexWEI(state)
   );
 }

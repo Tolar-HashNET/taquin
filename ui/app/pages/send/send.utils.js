@@ -257,7 +257,7 @@ async function estimateGas({
     receiver_address: paramsForGasEstimate.to,
     amount: Number(paramsForGasEstimate.value),
     gas: Number(MIN_GAS_LIMIT_DEC),
-    gas_price: 1,
+    gas_price: 1000000000000,
     data: "",
   };
 

@@ -207,7 +207,7 @@ async function queryEthGasStationPredictionTable() {
 export function fetchBasicGasEstimates() {
   return async (dispatch, getState) => {
     const { basicPriceEstimatesLastRetrieved } = getState().gas;
-
+    console.log(basicPriceEstimatesLastRetrieved)
     const timeLastRetrieved =
       basicPriceEstimatesLastRetrieved ||
       loadLocalStorageData("BASIC_PRICE_ESTIMATES_LAST_RETRIEVED") ||

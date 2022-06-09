@@ -23,7 +23,7 @@ class JsonImportSubview extends Component {
 
   render() {
     const { error, history, mostRecentOverviewPage } = this.props;
-    const enabled = !this.state.isEmpty && this.state.fileContents !== "";
+    const enabled = this.state.fileContents !== "";
 
     return (
       <div className="new-account-import-form__json">
@@ -57,23 +57,19 @@ class JsonImportSubview extends Component {
         />
 
         <div className="new-account-create-form__buttons">
-          <Button
-            type="default"
-            large
-            className="new-account-create-form__button"
+          <button
+            className="tolar-button tolar-button--secondary tolar-button--wide"
             onClick={() => history.push(mostRecentOverviewPage)}
           >
             {this.context.t("cancel")}
-          </Button>
-          <Button
-            type="secondary"
-            large
-            className="new-account-create-form__button"
+          </button>
+          <button
+            className="tolar-button tolar-button--wide"
             onClick={() => this.createNewKeychain()}
             disabled={!enabled}
           >
             {this.context.t("import")}
-          </Button>
+          </button>
         </div>
         {error ? <span className="error">{error}</span> : null}
       </div>

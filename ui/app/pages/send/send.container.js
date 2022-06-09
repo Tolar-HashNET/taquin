@@ -44,6 +44,8 @@ import SendEther from "./send.component";
 function mapStateToProps(state) {
   const editingTransactionId = getSendEditingTransactionId(state);
 
+  console.log("BLA BLA", state)
+
   return {
     addressBook: getAddressBook(state),
     amount: getSendAmount(state),

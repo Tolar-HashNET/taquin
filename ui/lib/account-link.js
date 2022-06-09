@@ -8,9 +8,9 @@ export default function getAccountLink(address, network, rpcPrefs) {
 
   switch (network) {
     case "mainnet": // main net
-      return `https://explorer.tolar.io/address/${address}`;
+      return `https://explorer.tolar.io/?query=${address}&page=1`;
     case "testnet": // morden test net
-      return ` https://testnet-explorer.tolar.io/address/${address}`;
+      return ` https://testnet-explorer.tolar.io/?query=${address}&page=1`;
     default:
       return "";
   }

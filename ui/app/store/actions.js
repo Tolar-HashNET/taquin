@@ -29,9 +29,9 @@ import * as actionConstants from "./actionConstants";
 let background = null;
 let promisifiedBackground = null;
 export function _setBackgroundConnection(backgroundConnection) {
-  console.log(backgroundConnection.paginate(1))
   background = backgroundConnection;
   promisifiedBackground = pify(background);
+  // console.log(backgroundConnection.getState())
 }
 
 export function goHome() {
